@@ -18,7 +18,7 @@ An automated tool manager for [eSim](https://esim.fossee.in/) EDA platform. This
 | **Update and Upgrade System** | Checks for updates and implements functionality for user to update tools | ✅ |
 | **Configuration Handling** | Automates configuration based on user settings and predefined settings | ✅ |
 | **Dependency Checker** | Validates missing and incompatible dependencies with version-specific checks | ✅ |
-| **User Interface** | Simple, user-friendly command-line interface with visual tables and logs | ✅ |
+| **User Interface** | Simple, user-friendly command-line interface and Graphical User Interface (GUI) | ✅ |
 | **Cross-platform Support** | Works on Linux (apt), Windows (Chocolatey), and macOS (Homebrew) | ✅ |
 | **Package Manager Integration** | Integrates with popular package managers to streamline tool management | ✅ |
 
@@ -50,7 +50,15 @@ esim-tool --help
 
 ## 📖 Usage
 
-### Basic Commands
+### GUI Application
+You can launch the graphical user interface instead of using the CLI:
+```bash
+esim-tool-gui
+# OR
+python main.py gui
+```
+
+### Basic CLI Commands
 
 | Command | Description | Example |
 |---------|-------------|---------|
@@ -89,9 +97,13 @@ esim-tool config-set log_level DEBUG
 ```mermaid
 graph TD
     CLI[CLI Interface<br/>Typer + Rich] --> INS[Installer<br/>Download & Install]
+    GUI[GUI Interface<br/>Tkinter] --> INS
     CLI --> UPD[Updater<br/>Version Management]
+    GUI --> UPD
     CLI --> DEP[Dependency Checker<br/>Validation Engine]
+    GUI --> DEP
     CLI --> ENV[Environment Manager<br/>PATH & Variables]
+    GUI --> ENV
     
     INS --> PKG[Package Bridge<br/>apt/brew/choco]
     INS --> CFG[Config Manager<br/>User Settings]
@@ -116,7 +128,8 @@ graph TD
 
 | Module | Primary Responsibility | Key Functions |
 |--------|----------------------|---------------|
-| **cli.py** | User interface and command routing | `install()`, `update()`, `list()`, `check_deps()` |
+| **cli.py** | CLI user interface and command routing | `install()`, `update()`, `list()`, `check_deps()` |
+| **gui.py** | Graphical user interface | `ESimToolManagerGUI` |
 | **installer.py** | Tool installation and verification | `install_tool()`, `verify_installation()`, `get_installed_version()` |
 | **updater.py** | Version checking and updates | `check_tool_update()`, `update_tool()`, `update_all_tools()` |
 | **dependency_checker.py** | Dependency validation | `check_dependencies()`, `get_problem_dependencies()` |
@@ -206,7 +219,7 @@ The tool automatically configures environment variables for installed tools:
 | Update System | ✅ | updater.py |
 | Configuration Handling | ✅ | config.py, env_manager.py |
 | Dependency Checker | ✅ | dependency_checker.py |
-| User Interface | ✅ | ui/cli.py, ui/display.py |
+| User Interface | ✅ | ui/cli.py, ui/display.py, ui/gui.py |
 | Cross-platform Support | ✅ | package_bridge.py |
 | Package Manager Integration | ✅ | package_bridge.py |
 

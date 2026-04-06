@@ -13,6 +13,7 @@ setup(
     entry_points={
         "console_scripts": [
             "esim-tool=main:app",
+            "esim-tool-gui=tool_manager.ui.gui:main",
         ],
     },
     python_requires=">=3.10",
