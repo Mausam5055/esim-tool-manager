@@ -1,0 +1,114 @@
+{
+  "tools": [
+    {
+      "name": "ngspice",
+      "display_name": "Ngspice",
+      "version": "41",
+      "description": "Mixed-level/signal circuit simulator",
+      "category": "simulator",
+      "platforms": {
+        "linux": {
+          "package_manager": "apt",
+          "package_name": "ngspice",
+          "fallback_url": "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41.tar.gz"
+        },
+        "windows": {
+          "package_manager": "chocolatey",
+          "package_name": "ngspice",
+          "fallback_url": "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip"
+        },
+        "darwin": {
+          "package_manager": "homebrew",
+          "package_name": "ngspice",
+          "fallback_url": null
+        }
+      },
+      "dependencies": ["libxaw7-dev", "libx11-dev", "libreadline-dev"],
+      "min_dep_versions": {
+        "libxaw7-dev": "2:1.0.13",
+        "libx11-dev": "2:1.7.0",
+        "libreadline-dev": "8.0"
+      },
+      "verify_command": "ngspice --version",
+      "config_paths": {
+        "linux": "~/.ngspice/",
+        "windows": "%APPDATA%\\ngspice\\"
+      },
+      "env_vars": {
+        "NGSPICE_HOME": "/usr/share/ngspice"
+      }
+    },
+    {
+      "name": "kicad",
+      "display_name": "KiCad",
+      "version": "7.0",
+      "description": "PCB design software suite",
+      "category": "pcb",
+      "platforms": {
+        "linux": {
+          "package_manager": "apt",
+          "package_name": "kicad",
+          "fallback_url": null
+        },
+        "windows": {
+          "package_manager": "chocolatey",
+          "package_name": "kicad",
+          "fallback_url": "https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe"
+        },
+        "darwin": {
+          "package_manager": "homebrew",
+          "package_name": "kicad",
+          "fallback_url": null
+        }
+      },
+      "dependencies": ["libwxgtk3.0-gtk3-dev", "python3"],
+      "min_dep_versions": {
+        "libwxgtk3.0-gtk3-dev": "3.0.5",
+        "python3": "3.8.0"
+      },
+      "verify_command": "kicad --version",
+      "config_paths": {
+        "linux": "~/.config/kicad/",
+        "windows": "%APPDATA%\\kicad\\"
+      },
+      "env_vars": {
+        "KICAD_SYMBOL_DIR": "/usr/share/kicad/library"
+      }
+    },
+    {
+      "name": "openmodelica",
+      "display_name": "OpenModelica",
+      "version": "1.21.0",
+      "description": "Open-source Modelica-based modeling and simulation environment",
+      "category": "simulator",
+      "platforms": {
+        "linux": {
+          "package_manager": "apt",
+          "package_name": "openmodelica",
+          "fallback_url": null
+        },
+        "windows": {
+          "package_manager": "chocolatey",
+          "package_name": "openmodelica",
+          "fallback_url": "https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe"
+        },
+        "darwin": {
+          "package_manager": "homebrew",
+          "package_name": null,
+          "fallback_url": "https://build.openmodelica.org/omc/builds/mac/"
+        }
+      },
+      "dependencies": ["cmake", "gcc", "g++"],
+      "min_dep_versions": {
+        "cmake": "3.16.0",
+        "gcc": "9.0.0",
+        "g++": "9.0.0"
+      },
+      "verify_command": "omc --version",
+      "config_paths": {},
+      "env_vars": {
+        "OPENMODELICAHOME": "/usr/lib/omc"
+      }
+    }
+  ]
+}

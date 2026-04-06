@@ -1,0 +1,16 @@
+[2026-04-06 23:26:59,526] [INFO] [tool_manager.config] — Config file not found. Creating default config at <MagicMock name='CONFIG_FILE' id='1946065679568'>
+[2026-04-06 23:27:07,773] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\AppData\Local\Temp\pytest-of-rikik\pytest-0\test_get_and_set0\config.json
+[2026-04-06 23:27:07,806] [DEBUG] [tool_manager.config] — Config updated: test_key = test_value
+[2026-04-06 23:27:07,823] [DEBUG] [tool_manager.config] — Config updated: installed_tools.ngspice.version = 41
+[2026-04-06 23:27:07,873] [WARNING] [tool_manager.installer] — Requested version 40 differs from registry default 41
+[2026-04-06 23:27:07,940] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-06 23:27:17,694] [INFO] [tool_manager.config] — Config file not found. Creating default config at <MagicMock name='CONFIG_FILE' id='1533877491696'>
+[2026-04-06 23:27:17,695] [ERROR] [tool_manager.config] — Failed to save config: [WinError 3] The system cannot find the path specified: 'MagicMock/CONFIG_FILE.with_suffix()/1533879139840' -> 'MagicMock/CONFIG_FILE/1533877491696'
+[2026-04-06 23:27:17,705] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\AppData\Local\Temp\pytest-of-rikik\pytest-1\test_get_and_set0\config.json
+[2026-04-06 23:27:17,707] [DEBUG] [tool_manager.config] — Config updated: test_key = test_value
+[2026-04-06 23:27:17,721] [DEBUG] [tool_manager.config] — Config updated: installed_tools.ngspice.version = 41
+[2026-04-06 23:27:17,782] [WARNING] [tool_manager.installer] — Requested version 40 differs from registry default 41
+[2026-04-06 23:27:17,816] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-06 23:27:26,812] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\.esim_tool_manager\config.json
+[2026-04-06 23:27:26,813] [ERROR] [tool_manager.config] — Failed to save config: [Errno 13] Permission denied: 'C:\\Users\\rikik\\.esim_tool_manager\\config.tmp'
+[2026-04-06 23:27:38,818] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\.esim_tool_manager\config.json
