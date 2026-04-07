@@ -14,3 +14,1146 @@
 [2026-04-06 23:27:26,812] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\.esim_tool_manager\config.json
 [2026-04-06 23:27:26,813] [ERROR] [tool_manager.config] — Failed to save config: [Errno 13] Permission denied: 'C:\\Users\\rikik\\.esim_tool_manager\\config.tmp'
 [2026-04-06 23:27:38,818] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\.esim_tool_manager\config.json
+[2026-04-07 00:12:25,600] [WARNING] [tool_manager.installer] — Missing or incompatible dependencies for openmodelica: cmake, gcc, g++
+[2026-04-07 00:12:25,600] [ERROR] [tool_manager.installer] — Installation aborted due to missing dependencies. Use --force to proceed anyway.
+[2026-04-07 00:24:10,794] [WARNING] [tool_manager.installer] — Missing or incompatible dependencies for ngspice: libxaw7-dev, libx11-dev, libreadline-dev
+[2026-04-07 00:24:10,794] [ERROR] [tool_manager.installer] — Installation aborted due to missing dependencies. Use --force to proceed anyway.
+[2026-04-07 00:25:06,278] [WARNING] [tool_manager.installer] — Missing or incompatible dependencies for openmodelica: cmake, gcc, g++
+[2026-04-07 00:25:06,278] [ERROR] [tool_manager.installer] — Installation aborted due to missing dependencies. Use --force to proceed anyway.
+[2026-04-07 00:27:10,889] [INFO] [tool_manager.package_bridge] — Running install command: choco install ngspice -y
+[2026-04-07 00:28:27,261] [ERROR] [tool_manager.package_bridge] — Installation failed with code 1
+[2026-04-07 00:28:27,261] [DEBUG] [tool_manager.package_bridge] — STDOUT: Chocolatey v2.5.0
+Chocolatey detected you are not running from an elevated command shell
+ (cmd/powershell).
+
+ You may experience errors - many functions/packages
+ require admin rights. Only advanced users should run choco w/out an
+ elevated shell. When you open the command shell, you should ensure
+ that you do so with "Run as Administrator" selected. If you are
+ attempting to use Chocolatey in a non-administrator setting, you
+ must select a different location other than the default install
+ location. See
+ https://docs.chocolatey.org/en-us/choco/setup#non-administrative-install
+ for details.
+
+For the question below, you have 20 seconds to make a selection.
+
+ Do you want to continue?([Y]es/[N]o): 
+Timeout or your choice of '' is not a valid selection.
+Installing the following packages:
+ngspice
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... %
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 1%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 2%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 3%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 4%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 5%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 6%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 7%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 8%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 9%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 10%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 11%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 12%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 13%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 14%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 15%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 16%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 17%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 18%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 19%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 20%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 21%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 22%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 23%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 24%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 25%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 26%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 27%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 28%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 29%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 30%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 31%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 32%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 33%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 34%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 35%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 36%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 37%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 38%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 39%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 40%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 41%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 42%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 43%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 44%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 45%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 46%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 47%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 48%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 49%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 50%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 51%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 52%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 53%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 54%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 55%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 56%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 57%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 58%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 59%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 60%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 61%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 62%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 63%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 64%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 65%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 66%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 67%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 68%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 69%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 70%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 71%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 72%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 73%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 74%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 75%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 76%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 77%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 78%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 79%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 80%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 81%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 82%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 83%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 84%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 85%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 86%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 87%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 88%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 89%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 90%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 91%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 92%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 93%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 94%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 95%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 96%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 97%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 98%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 99%
+Progress: Downloading ngspice 41.0... 100%
+Progress: Downloading ngspice 41.0... 100%
+Progress: Downloading ngspice 41.0... 100%
+Progress: Downloading ngspice 41.0... 100%
+Progress: Downloading ngspice 41.0... 100%
+Progress: Downloading ngspice 41.0... 100%
+ngspice not installed. An error occurred during installation:
+ Unable to obtain lock file access on 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' for operations on 'C:\ProgramData\chocolatey\lib\ngspice'. This may mean that a different user or administrator is holding this lock and that this process does not have permission to access it. If no other process is currently performing an operation on this file it may mean that an earlier NuGet process crashed and left an inaccessible lock file, in this case removing the file 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' will allow NuGet to continue.
+ngspice package files install failed with exit code 1. Performing other installation steps.
+The install of ngspice was NOT successful.
+ngspice not installed. An error occurred during installation:
+ Unable to obtain lock file access on 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' for operations on 'C:\ProgramData\chocolatey\lib\ngspice'. This may mean that a different user or administrator is holding this lock and that this process does not have permission to access it. If no other process is currently performing an operation on this file it may mean that an earlier NuGet process crashed and left an inaccessible lock file, in this case removing the file 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' will allow NuGet to continue.
+This is try 1/3. Retrying after 300 milliseconds.
+ Error converted to warning:
+ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+This is try 2/3. Retrying after 400 milliseconds.
+ Error converted to warning:
+ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+Maximum tries of 3 reached. Throwing error.
+Cannot create directory "C:\ProgramData\chocolatey\lib-bad". Error was:
+System.UnauthorizedAccessException: Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   at System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.<>c__DisplayClass63_0.<CreateDirectory>b__1()
+   at chocolatey.infrastructure.tolerance.FaultTolerance.<>c__DisplayClass1_0.<Retry>b__0()
+   at chocolatey.infrastructure.tolerance.FaultTolerance.Retry[T](Int32 numberOfTries, Func`1 function, Int32 waitDurationMilliseconds, Int32 increaseRetryByMilliseconds, Boolean isSilent)
+   at chocolatey.infrastructure.tolerance.FaultTolerance.Retry(Int32 numberOfTries, Action action, Int32 waitDurationMilliseconds, Int32 increaseRetryByMilliseconds, Boolean isSilent)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.CreateDirectory(String directoryPath, Boolean isSilent)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.EnsureDirectoryExists(String directoryPath, Boolean ignoreError, Boolean isSilent)
+
+Chocolatey installed 0/0 packages. 
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+
+[2026-04-07 00:28:27,262] [DEBUG] [tool_manager.package_bridge] — STDERR: 
+[2026-04-07 00:28:27,262] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 00:28:27,264] [INFO] [tool_manager.installer] — Downloading https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 00:28:28,470] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 00:32:00,832] [INFO] [tool_manager.package_bridge] — Running install command: choco install ngspice -y
+[2026-04-07 00:33:11,875] [ERROR] [tool_manager.package_bridge] — Installation failed with code 1
+[2026-04-07 00:33:11,876] [DEBUG] [tool_manager.package_bridge] — STDOUT: Chocolatey v2.5.0
+Chocolatey detected you are not running from an elevated command shell
+ (cmd/powershell).
+
+ You may experience errors - many functions/packages
+ require admin rights. Only advanced users should run choco w/out an
+ elevated shell. When you open the command shell, you should ensure
+ that you do so with "Run as Administrator" selected. If you are
+ attempting to use Chocolatey in a non-administrator setting, you
+ must select a different location other than the default install
+ location. See
+ https://docs.chocolatey.org/en-us/choco/setup#non-administrative-install
+ for details.
+
+For the question below, you have 20 seconds to make a selection.
+
+ Do you want to continue?([Y]es/[N]o): 
+Timeout or your choice of '' is not a valid selection.
+Installing the following packages:
+ngspice
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+ngspice not installed. An error occurred during installation:
+ Unable to obtain lock file access on 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' for operations on 'C:\ProgramData\chocolatey\lib\ngspice'. This may mean that a different user or administrator is holding this lock and that this process does not have permission to access it. If no other process is currently performing an operation on this file it may mean that an earlier NuGet process crashed and left an inaccessible lock file, in this case removing the file 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' will allow NuGet to continue.
+ngspice package files install failed with exit code 1. Performing other installation steps.
+The install of ngspice was NOT successful.
+ngspice not installed. An error occurred during installation:
+ Unable to obtain lock file access on 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' for operations on 'C:\ProgramData\chocolatey\lib\ngspice'. This may mean that a different user or administrator is holding this lock and that this process does not have permission to access it. If no other process is currently performing an operation on this file it may mean that an earlier NuGet process crashed and left an inaccessible lock file, in this case removing the file 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' will allow NuGet to continue.
+This is try 1/3. Retrying after 300 milliseconds.
+ Error converted to warning:
+ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+This is try 2/3. Retrying after 400 milliseconds.
+ Error converted to warning:
+ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+Maximum tries of 3 reached. Throwing error.
+Cannot create directory "C:\ProgramData\chocolatey\lib-bad". Error was:
+System.UnauthorizedAccessException: Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   at System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.<>c__DisplayClass63_0.<CreateDirectory>b__1()
+   at chocolatey.infrastructure.tolerance.FaultTolerance.<>c__DisplayClass1_0.<Retry>b__0()
+   at chocolatey.infrastructure.tolerance.FaultTolerance.Retry[T](Int32 numberOfTries, Func`1 function, Int32 waitDurationMilliseconds, Int32 increaseRetryByMilliseconds, Boolean isSilent)
+   at chocolatey.infrastructure.tolerance.FaultTolerance.Retry(Int32 numberOfTries, Action action, Int32 waitDurationMilliseconds, Int32 increaseRetryByMilliseconds, Boolean isSilent)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.CreateDirectory(String directoryPath, Boolean isSilent)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.EnsureDirectoryExists(String directoryPath, Boolean ignoreError, Boolean isSilent)
+
+Chocolatey installed 0/0 packages. 
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+
+[2026-04-07 00:33:11,876] [DEBUG] [tool_manager.package_bridge] — STDERR: 
+[2026-04-07 00:33:11,876] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 00:33:11,877] [INFO] [tool_manager.installer] — Downloading https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 00:33:13,294] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 00:34:44,934] [INFO] [tool_manager.installer] — Attempting to install via chocolatey: ngspice
+[2026-04-07 00:34:44,934] [INFO] [tool_manager.package_bridge] — Running install command: choco install ngspice -y
+[2026-04-07 00:35:55,949] [ERROR] [tool_manager.package_bridge] — Installation failed with code 1
+[2026-04-07 00:35:55,949] [DEBUG] [tool_manager.package_bridge] — STDOUT: Chocolatey v2.5.0
+Chocolatey detected you are not running from an elevated command shell
+ (cmd/powershell).
+
+ You may experience errors - many functions/packages
+ require admin rights. Only advanced users should run choco w/out an
+ elevated shell. When you open the command shell, you should ensure
+ that you do so with "Run as Administrator" selected. If you are
+ attempting to use Chocolatey in a non-administrator setting, you
+ must select a different location other than the default install
+ location. See
+ https://docs.chocolatey.org/en-us/choco/setup#non-administrative-install
+ for details.
+
+For the question below, you have 20 seconds to make a selection.
+
+ Do you want to continue?([Y]es/[N]o): 
+Timeout or your choice of '' is not a valid selection.
+Installing the following packages:
+ngspice
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+ngspice not installed. An error occurred during installation:
+ Unable to obtain lock file access on 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' for operations on 'C:\ProgramData\chocolatey\lib\ngspice'. This may mean that a different user or administrator is holding this lock and that this process does not have permission to access it. If no other process is currently performing an operation on this file it may mean that an earlier NuGet process crashed and left an inaccessible lock file, in this case removing the file 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' will allow NuGet to continue.
+ngspice package files install failed with exit code 1. Performing other installation steps.
+The install of ngspice was NOT successful.
+ngspice not installed. An error occurred during installation:
+ Unable to obtain lock file access on 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' for operations on 'C:\ProgramData\chocolatey\lib\ngspice'. This may mean that a different user or administrator is holding this lock and that this process does not have permission to access it. If no other process is currently performing an operation on this file it may mean that an earlier NuGet process crashed and left an inaccessible lock file, in this case removing the file 'C:\ProgramData\chocolatey\lib\50eca392d9baa965d5bbb8683d006877737c4a59' will allow NuGet to continue.
+This is try 1/3. Retrying after 300 milliseconds.
+ Error converted to warning:
+ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+This is try 2/3. Retrying after 400 milliseconds.
+ Error converted to warning:
+ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+Maximum tries of 3 reached. Throwing error.
+Cannot create directory "C:\ProgramData\chocolatey\lib-bad". Error was:
+System.UnauthorizedAccessException: Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.InternalCreateDirectory(String fullPath, String path, Object dirSecurityObj, Boolean checkHost)
+   at System.IO.Directory.InternalCreateDirectoryHelper(String path, Boolean checkHost)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.<>c__DisplayClass63_0.<CreateDirectory>b__1()
+   at chocolatey.infrastructure.tolerance.FaultTolerance.<>c__DisplayClass1_0.<Retry>b__0()
+   at chocolatey.infrastructure.tolerance.FaultTolerance.Retry[T](Int32 numberOfTries, Func`1 function, Int32 waitDurationMilliseconds, Int32 increaseRetryByMilliseconds, Boolean isSilent)
+   at chocolatey.infrastructure.tolerance.FaultTolerance.Retry(Int32 numberOfTries, Action action, Int32 waitDurationMilliseconds, Int32 increaseRetryByMilliseconds, Boolean isSilent)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.CreateDirectory(String directoryPath, Boolean isSilent)
+   at chocolatey.infrastructure.filesystem.DotNetFileSystem.EnsureDirectoryExists(String directoryPath, Boolean ignoreError, Boolean isSilent)
+
+Chocolatey installed 0/0 packages. 
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
+
+[2026-04-07 00:35:55,949] [DEBUG] [tool_manager.package_bridge] — STDERR: 
+[2026-04-07 00:35:55,949] [ERROR] [tool_manager.installer] — Package manager install failed: 
+[2026-04-07 00:35:55,949] [ERROR] [tool_manager.installer] — No installation method available for ngspice on windows
+[2026-04-07 19:44:49,249] [INFO] [tool_manager.installer] — Attempting to install via chocolatey: ngspice
+[2026-04-07 19:44:49,251] [INFO] [tool_manager.package_bridge] — Running install command: choco install ngspice -y
+[2026-04-07 19:47:30,088] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip/download
+[2026-04-07 19:47:30,186] [INFO] [tool_manager.installer] — Downloading https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip/download...
+[2026-04-07 19:47:31,600] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip/download
+[2026-04-07 19:47:48,822] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip/download
+[2026-04-07 19:47:48,824] [INFO] [tool_manager.installer] — Downloading https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip/download...
+[2026-04-07 19:47:49,740] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip/download
+[2026-04-07 19:54:22,043] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe
+[2026-04-07 19:54:22,098] [INFO] [tool_manager.installer] — Downloading https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe...
+[2026-04-07 19:54:24,402] [ERROR] [tool_manager.installer] — Failed to install openmodelica from URL: 404 Client Error: Not Found for url: https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe
+[2026-04-07 19:54:29,261] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe
+[2026-04-07 19:54:29,263] [INFO] [tool_manager.installer] — Downloading https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe...
+[2026-04-07 19:54:30,276] [ERROR] [tool_manager.installer] — Failed to install openmodelica from URL: 404 Client Error: Not Found for url: https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe
+[2026-04-07 19:54:40,770] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe
+[2026-04-07 19:54:40,834] [INFO] [tool_manager.installer] — Downloading https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe...
+[2026-04-07 19:54:41,520] [ERROR] [tool_manager.installer] — Failed to install kicad from URL: 404 Client Error: Not Found for url: https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe
+[2026-04-07 19:54:47,308] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe
+[2026-04-07 19:54:47,309] [INFO] [tool_manager.installer] — Downloading https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe...
+[2026-04-07 19:54:47,848] [ERROR] [tool_manager.installer] — Failed to install kicad from URL: 404 Client Error: Not Found for url: https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe
+[2026-04-07 19:57:03,893] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/ngspice/ngspice/archive/refs/heads/master.zip
+[2026-04-07 19:57:03,941] [INFO] [tool_manager.installer] — Downloading https://github.com/ngspice/ngspice/archive/refs/heads/master.zip...
+[2026-04-07 19:57:11,950] [INFO] [tool_manager.installer] — Extracting master.zip...
+[2026-04-07 19:57:12,071] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: [WinError 5] Access is denied: 'C:\\Users\\rikik\\AppData\\Local\\eSimTools'
+[2026-04-07 19:57:17,297] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/ngspice/ngspice/archive/refs/heads/master.zip
+[2026-04-07 19:57:17,299] [INFO] [tool_manager.installer] — Downloading https://github.com/ngspice/ngspice/archive/refs/heads/master.zip...
+[2026-04-07 19:57:30,196] [INFO] [tool_manager.installer] — Extracting master.zip...
+[2026-04-07 19:57:31,395] [INFO] [tool_manager.installer] — Added C:\Users\rikik\AppData\Local\eSimTools\ngspice to PATH
+[2026-04-07 19:57:31,395] [INFO] [tool_manager.installer] — Installation successful for ngspice at C:\Users\rikik\AppData\Local\eSimTools\ngspice
+[2026-04-07 19:57:31,408] [WARNING] [tool_manager.installer] — Installation of ngspice completed but verification failed (may require terminal restart).
+[2026-04-07 19:57:31,408] [INFO] [tool_manager.env_manager] — Updated Registry (HKCU\Environment): NGSPICE_HOME=/usr/share/ngspice
+[2026-04-07 19:57:31,409] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {'ngspice': {'version': '41', 'installed_at': 'system', 'install_method': 'chocolatey', 'platform': 'windows'}}
+[2026-04-07 19:57:31,409] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-07 19:57:39,285] [INFO] [tool_manager.updater] — No update available for ngspice
+[2026-04-07 19:57:56,211] [INFO] [tool_manager.updater] — No update available for ngspice
+[2026-04-07 20:02:36,829] [INFO] [tool_manager.env_manager] — Removed env vars for ngspice from HKCU\Environment
+[2026-04-07 20:02:36,831] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {}
+[2026-04-07 20:02:36,831] [WARNING] [tool_manager.installer] — Uninstall command for ngspice failed or was not available.
+[2026-04-07 20:02:40,172] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/ngspice/ngspice/archive/refs/heads/master.zip
+[2026-04-07 20:02:40,174] [INFO] [tool_manager.installer] — Downloading https://github.com/ngspice/ngspice/archive/refs/heads/master.zip...
+[2026-04-07 20:02:49,929] [INFO] [tool_manager.installer] — Extracting master.zip...
+[2026-04-07 20:02:50,942] [INFO] [tool_manager.installer] — Installation successful for ngspice at C:\Users\rikik\AppData\Local\eSimTools\ngspice
+[2026-04-07 20:02:50,958] [WARNING] [tool_manager.installer] — Installation of ngspice completed but verification failed (may require terminal restart).
+[2026-04-07 20:02:50,959] [INFO] [tool_manager.env_manager] — Updated Registry (HKCU\Environment): NGSPICE_HOME=/usr/share/ngspice
+[2026-04-07 20:02:50,960] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {'ngspice': {'version': '41', 'installed_at': 'system', 'install_method': 'chocolatey', 'platform': 'windows'}}
+[2026-04-07 20:02:50,960] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-07 20:03:09,315] [INFO] [tool_manager.env_manager] — Removed env vars for ngspice from HKCU\Environment
+[2026-04-07 20:03:09,317] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {}
+[2026-04-07 20:03:09,317] [WARNING] [tool_manager.installer] — Uninstall command for ngspice failed or was not available.

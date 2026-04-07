@@ -1,0 +1,3 @@
+[console_scripts]
+esim-tool = tool_manager.ui.cli:app
+esim-tool-gui = tool_manager.ui.gui:main
