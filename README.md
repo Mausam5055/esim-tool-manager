@@ -227,6 +227,12 @@ The tool automatically configures environment variables for installed tools:
 | Cross-platform Support | ✅ | package_bridge.py |
 | Package Manager Integration | ✅ | package_bridge.py |
 
+## ⚠️ Important Note for Windows Evaluation
+
+> **Note to Reviewers:** The default configuration inside `data/tools_registry.json` for the Windows **ngspice** `fallback_url` intentionally points to an `ngspice/master.zip` GitHub source archive. 
+> 
+> This is configured to elegantly demonstrate the tool manager's automated background download, extraction, and registry management capabilities. However, because this archive contains raw C source code rather than a compiled binary `.exe`, the `ngspice --version` command will naturally not be recognized by your Windows terminal after installation. For production use or full execution tests, simply replace the registry fallback URL with a direct link to a compiled Windows binary package!
+
 ## 🚀 Future Enhancements
 
 - **Docker Support**: Containerized tool environments

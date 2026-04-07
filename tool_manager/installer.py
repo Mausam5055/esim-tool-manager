@@ -19,7 +19,7 @@ WINDOWS_INSTALL_DIR = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData
 
 logger = get_logger(__name__)
 
-def install_tool(tool_name: str, registry: dict, version: str = None, force: bool = False) -> bool:
+def install_tool(tool_name: str, registry: dict, version: str = None, force: bool = False, progress_callback=None, cancel_event=None) -> bool:
     """Core installation engine."""
     tool_entry = next((t for t in registry["tools"] if t["name"] == tool_name), None)
     if not tool_entry:
@@ -74,7 +74,7 @@ def install_tool(tool_name: str, registry: dict, version: str = None, force: boo
         fallback_url = platform_config.get("fallback_url")
         if fallback_url:
             logger.info(f"Attempting installation from fallback URL: {fallback_url}")
-            success = _install_via_url(tool_name, fallback_url, system, tool_entry)
+            success = _install_via_url(tool_name, fallback_url, system, tool_entry, progress_callback, cancel_event)
         else:
             logger.error(f"No installation method available for {tool_name} on {system}")
             return False
@@ -108,61 +108,75 @@ def _resolve_version(tool: dict, requested_version: str | None) -> str:
         logger.warning(f"Requested version {requested_version} differs from registry default {tool['version']}")
     return requested_version
 
-def _install_via_url(tool_name: str, url: str, system: str, tool_entry: dict = None) -> bool:
+def _install_via_url(tool_name: str, url: str, system: str, tool_entry: dict = None, progress_callback=None, cancel_event=None) -> bool:
     """Downloads and extracts tool from URL."""
+    tmp_dir = None
     try:
-        with tempfile.TemporaryDirectory() as tmp_dir:
-            tmp_path = Path(tmp_dir)
-            file_name = url.split("/")[-1]
-            download_path = tmp_path / file_name
-            
-            logger.info(f"Downloading {url}...")
-            response = requests.get(url, stream=True)
-            response.raise_for_status()
-            
-            with open(download_path, "wb") as f:
-                for chunk in response.iter_content(chunk_size=8192):
+        tmp_dir = tempfile.mkdtemp()
+        tmp_path = Path(tmp_dir)
+        file_name = url.split("/")[-1]
+        download_path = tmp_path / file_name
+        
+        logger.info(f"Downloading {url}...")
+        response = requests.get(url, stream=True)
+        response.raise_for_status()
+        
+        total_size = int(response.headers.get('content-length', 0))
+        downloaded = 0
+        
+        with open(download_path, "wb") as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                if cancel_event and cancel_event.is_set():
+                    logger.warning("Installation aborted by user.")
+                    return False
+                if chunk:
                     f.write(chunk)
+                    downloaded += len(chunk)
+                    if progress_callback:
+                        progress_callback(downloaded, total_size)
                     
-            logger.info(f"Extracting {file_name}...")
+        logger.info(f"Extracting {file_name}...")
+        
+        # Determine install location
+        if system == "windows":
+            install_dir = WINDOWS_INSTALL_DIR / tool_name
+            install_dir.mkdir(parents=True, exist_ok=True)
+        else:
+            install_dir = tmp_path
+        
+        if file_name.endswith(".zip"):
+            with zipfile.ZipFile(download_path, 'r') as zip_ref:
+                zip_ref.extractall(install_dir)
             
-            # Determine install location
+            # For Windows zip installs, add to PATH
             if system == "windows":
-                install_dir = WINDOWS_INSTALL_DIR / tool_name
-                install_dir.mkdir(parents=True, exist_ok=True)
-            else:
-                install_dir = tmp_path
-            
-            if file_name.endswith(".zip"):
-                with zipfile.ZipFile(download_path, 'r') as zip_ref:
-                    zip_ref.extractall(install_dir)
+                _add_to_windows_path(install_dir)
                 
-                # For Windows zip installs, add to PATH
-                if system == "windows":
-                    _add_to_windows_path(install_dir)
-                    
-            elif file_name.endswith(".tar.gz") or file_name.endswith(".tgz"):
-                with tarfile.open(download_path, 'r:gz') as tar_ref:
-                    tar_ref.extractall(install_dir)
-                    
-            elif file_name.endswith(".exe") and system == "windows":
-                logger.info(f"Running silent installer: {file_name}")
-                result = subprocess.run([str(download_path), "/S"], capture_output=True, text=True)
-                return result.returncode == 0
-            else:
-                logger.error(f"Unsupported file format: {file_name}")
-                return False
+        elif file_name.endswith(".tar.gz") or file_name.endswith(".tgz"):
+            with tarfile.open(download_path, 'r:gz') as tar_ref:
+                tar_ref.extractall(install_dir)
                 
-            logger.info(f"Installation successful for {tool_name} at {install_dir}")
+        elif file_name.endswith(".exe") and system == "windows":
+            logger.info(f"Running silent installer: {file_name}")
+            result = subprocess.run([str(download_path), "/S"], capture_output=True, text=True)
+            return result.returncode == 0
+        else:
+            logger.error(f"Unsupported file format: {file_name}")
+            return False
             
-            # Store install location in tool entry for later use
-            if tool_entry:
-                tool_entry['_install_dir'] = str(install_dir)
-            
-            return True
+        logger.info(f"Installation successful for {tool_name} at {install_dir}")
+        
+        # Store install location in tool entry for later use
+        if tool_entry:
+            tool_entry['_install_dir'] = str(install_dir)
+        
+        return True
     except Exception as e:
         logger.error(f"Failed to install {tool_name} from URL: {e}")
         return False
+    finally:
+        if tmp_dir:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
 
 def _add_to_windows_path(tool_dir: Path):
     """Add tool directory to Windows PATH via registry."""

@@ -20,6 +20,7 @@ ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark
 class ESimToolManagerGUI(ctk.CTk):
     def __init__(self):
         super().__init__()
+        self.cancel_event = None
         
         self.title("eSim Automated Tool Manager")
         self.geometry("950x650")
@@ -58,6 +59,9 @@ class ESimToolManagerGUI(ctk.CTk):
         
         self.btn_refresh = ctk.CTkButton(self.sidebar_frame, text="Refresh List", command=self.refresh_tools_list, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"))
         self.btn_refresh.grid(row=5, column=0, padx=20, pady=10)
+
+        self.btn_cancel = ctk.CTkButton(self.sidebar_frame, text="Cancel", command=self.cancel_operation, fg_color="#F44336", hover_color="#D32F2F", state="disabled")
+        self.btn_cancel.grid(row=6, column=0, padx=20, pady=10)
         
         self.appearance_mode_label = ctk.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
         self.appearance_mode_label.grid(row=7, column=0, padx=20, pady=(10, 0))
@@ -127,8 +131,18 @@ class ESimToolManagerGUI(ctk.CTk):
         self.console_label.pack(anchor="w", padx=10, pady=(10, 0))
         
         self.console = ctk.CTkTextbox(self.console_frame, wrap="word", font=ctk.CTkFont(family="Consolas", size=12))
-        self.console.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        self.console.pack(fill=tk.BOTH, expand=True, padx=10, pady=(10, 5))
         self.console.configure(state="disabled")
+
+        self.progress_frame = ctk.CTkFrame(self.console_frame, fg_color="transparent")
+        self.progress_frame.pack(fill=tk.X, padx=10, pady=(0, 10))
+        
+        self.progress_bar = ctk.CTkProgressBar(self.progress_frame)
+        self.progress_bar.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 10))
+        self.progress_bar.set(0)
+        
+        self.progress_label = ctk.CTkLabel(self.progress_frame, text="0%", width=40)
+        self.progress_label.pack(side=tk.RIGHT)
 
     def change_appearance_mode_event(self, new_appearance_mode: str):
         ctk.set_appearance_mode(new_appearance_mode)
@@ -230,6 +244,12 @@ class ESimToolManagerGUI(ctk.CTk):
             self.btn_update.configure(state="disabled")
             self.btn_uninstall.configure(state="normal")
 
+    def cancel_operation(self):
+        if self.cancel_event:
+            self.cancel_event.set()
+            self.log("Cancellation signal sent! Aborting operation...", "warning")
+            self.btn_cancel.configure(state="disabled")
+
     def run_in_thread(self, target_func, *args):
         self.btn_refresh.configure(state="disabled")
         
@@ -250,13 +270,26 @@ class ESimToolManagerGUI(ctk.CTk):
         tool_name = selected[0]
         
         self.log(f"Starting installation for {tool_name}...")
+        self.progress_bar.set(0)
+        self.progress_label.configure(text="0%")
+        self.cancel_event = threading.Event()
+        self.btn_cancel.configure(state="normal")
+        
+        def update_progress(current, total):
+            if total > 0:
+                perc = float(current) / float(total)
+                self.after(0, lambda p=perc: self.progress_bar.set(p))
+                self.after(0, lambda p=perc: self.progress_label.configure(text=f"{int(p*100)}%"))
         
         def task():
-            success = installer.install_tool(tool_name, self.registry)
+            success = installer.install_tool(tool_name, self.registry, progress_callback=update_progress, cancel_event=self.cancel_event)
+            self.after(0, lambda: self.btn_cancel.configure(state="disabled"))
             if success:
                 self.log(f"Successfully installed {tool_name}", "success")
+                self.after(0, lambda: self.progress_bar.set(1.0))
+                self.after(0, lambda: self.progress_label.configure(text="100%"))
             else:
-                self.log(f"Failed to install {tool_name}. Check dependencies or permissions.", "error")
+                self.log(f"Installer exited: {tool_name}.", "warning")
                 
         self.run_in_thread(task)
 
@@ -285,13 +318,26 @@ class ESimToolManagerGUI(ctk.CTk):
         tool_name = selected[0]
         
         self.log(f"Starting update for {tool_name}...")
+        self.progress_bar.set(0)
+        self.progress_label.configure(text="0%")
+        self.cancel_event = threading.Event()
+        self.btn_cancel.configure(state="normal")
         
+        def update_progress(current, total):
+            if total > 0:
+                perc = float(current) / float(total)
+                self.after(0, lambda p=perc: self.progress_bar.set(p))
+                self.after(0, lambda p=perc: self.progress_label.configure(text=f"{int(p*100)}%"))
+                
         def task():
-            success = updater.update_tool(tool_name, self.registry)
+            success = updater.update_tool(tool_name, self.registry, progress_callback=update_progress, cancel_event=self.cancel_event)
+            self.after(0, lambda: self.btn_cancel.configure(state="disabled"))
             if success:
                 self.log(f"Successfully updated {tool_name}", "success")
+                self.after(0, lambda: self.progress_bar.set(1.0))
+                self.after(0, lambda: self.progress_label.configure(text="100%"))
             else:
-                self.log(f"Failed to update {tool_name}.", "error")
+                self.log(f"Updater exited: {tool_name}.", "warning")
                 
         self.run_in_thread(task)
 

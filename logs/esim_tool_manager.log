@@ -1157,3 +1157,55 @@ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
 [2026-04-07 20:03:09,315] [INFO] [tool_manager.env_manager] — Removed env vars for ngspice from HKCU\Environment
 [2026-04-07 20:03:09,317] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {}
 [2026-04-07 20:03:09,317] [WARNING] [tool_manager.installer] — Uninstall command for ngspice failed or was not available.
+[2026-04-07 20:23:13,390] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/KiCad/kicad-source-mirror/releases/download/8.0.1/kicad-8.0.1-x86_64.exe
+[2026-04-07 20:23:13,392] [INFO] [tool_manager.installer] — Downloading https://github.com/KiCad/kicad-source-mirror/releases/download/8.0.1/kicad-8.0.1-x86_64.exe...
+[2026-04-07 20:38:20,840] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/ngspice/ngspice/archive/refs/heads/master.zip
+[2026-04-07 20:38:20,842] [INFO] [tool_manager.installer] — Downloading https://github.com/ngspice/ngspice/archive/refs/heads/master.zip...
+[2026-04-07 20:38:33,189] [INFO] [tool_manager.installer] — Extracting master.zip...
+[2026-04-07 20:38:34,030] [INFO] [tool_manager.installer] — Installation successful for ngspice at C:\Users\rikik\AppData\Local\eSimTools\ngspice
+[2026-04-07 20:38:34,048] [WARNING] [tool_manager.installer] — Installation of ngspice completed but verification failed (may require terminal restart).
+[2026-04-07 20:38:34,049] [INFO] [tool_manager.env_manager] — Updated Registry (HKCU\Environment): NGSPICE_HOME=/usr/share/ngspice
+[2026-04-07 20:38:34,051] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {'ngspice': {'version': '41', 'installed_at': 'system', 'install_method': 'chocolatey', 'platform': 'windows'}}
+[2026-04-07 20:38:34,052] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-07 20:40:29,648] [INFO] [tool_manager.env_manager] — Removed env vars for ngspice from HKCU\Environment
+[2026-04-07 20:40:29,649] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {}
+[2026-04-07 20:40:29,649] [WARNING] [tool_manager.installer] — Uninstall command for ngspice failed or was not available.
+[2026-04-07 20:40:42,595] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:40:42,597] [INFO] [tool_manager.installer] — Downloading https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 20:40:43,551] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:50:20,118] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe
+[2026-04-07 20:50:20,119] [INFO] [tool_manager.installer] — Downloading https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe...
+[2026-04-07 20:53:17,841] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:53:17,843] [INFO] [tool_manager.installer] — Downloading https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 20:53:18,727] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:53:22,128] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:53:22,128] [INFO] [tool_manager.installer] — Downloading https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 20:53:22,779] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:53:31,769] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:53:31,769] [INFO] [tool_manager.installer] — Downloading https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 20:53:32,325] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:54:42,759] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe
+[2026-04-07 20:54:42,760] [INFO] [tool_manager.installer] — Downloading https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe...
+[2026-04-07 20:58:48,466] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:58:48,467] [INFO] [tool_manager.installer] — Downloading https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 20:58:49,564] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:59:23,484] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe
+[2026-04-07 20:59:23,485] [INFO] [tool_manager.installer] — Downloading https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe...
+[2026-04-07 20:59:52,695] [WARNING] [tool_manager.installer] — Installation aborted by user.
+[2026-04-07 20:59:55,222] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 20:59:55,223] [INFO] [tool_manager.installer] — Downloading https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip...
+[2026-04-07 20:59:56,019] [ERROR] [tool_manager.installer] — Failed to install ngspice from URL: 404 Client Error: Not Found for url: https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41_64.zip
+[2026-04-07 21:00:19,184] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/ngspice/ngspice/archive/refs/heads/master.zip
+[2026-04-07 21:00:19,186] [INFO] [tool_manager.installer] — Downloading https://github.com/ngspice/ngspice/archive/refs/heads/master.zip...
+[2026-04-07 21:00:27,742] [INFO] [tool_manager.installer] — Extracting master.zip...
+[2026-04-07 21:00:28,918] [INFO] [tool_manager.installer] — Installation successful for ngspice at C:\Users\rikik\AppData\Local\eSimTools\ngspice
+[2026-04-07 21:00:28,931] [WARNING] [tool_manager.installer] — Installation of ngspice completed but verification failed (may require terminal restart).
+[2026-04-07 21:00:28,932] [INFO] [tool_manager.env_manager] — Updated Registry (HKCU\Environment): NGSPICE_HOME=/usr/share/ngspice
+[2026-04-07 21:00:28,932] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {'ngspice': {'version': '41', 'installed_at': 'system', 'install_method': 'chocolatey', 'platform': 'windows'}}
+[2026-04-07 21:00:28,933] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-07 21:02:03,623] [INFO] [tool_manager.env_manager] — Removed env vars for ngspice from HKCU\Environment
+[2026-04-07 21:02:03,625] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {}
+[2026-04-07 21:02:03,625] [WARNING] [tool_manager.installer] — Uninstall command for ngspice failed or was not available.
+[2026-04-07 21:02:06,945] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe
+[2026-04-07 21:02:06,946] [INFO] [tool_manager.installer] — Downloading https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe...
+[2026-04-07 21:02:09,854] [WARNING] [tool_manager.installer] — Installation aborted by user.
