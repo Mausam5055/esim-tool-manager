@@ -1,5 +1,6 @@
 import tkinter as tk
-from tkinter import ttk, messagebox, scrolledtext
+from tkinter import ttk, messagebox
+import customtkinter as ctk
 import threading
 import sys
 import os
@@ -12,30 +13,21 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from tool_manager.ui.cli import load_registry
 from tool_manager import installer, updater, dependency_checker, config
 
-class TextRedirector:
-    def __init__(self, widget, tag="stdout"):
-        self.widget = widget
-        self.tag = tag
+# Set customtkinter appearance and theme
+ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
+ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
-    def write(self, str):
-        self.widget.configure(state="normal")
-        self.widget.insert(tk.END, str, (self.tag,))
-        self.widget.see(tk.END)
-        self.widget.configure(state="disabled")
-
-    def flush(self):
-        pass
-
-class ESimToolManagerGUI:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("eSim Automated Tool Manager")
-        self.root.geometry("900x600")
-        self.root.minsize(800, 500)
+class ESimToolManagerGUI(ctk.CTk):
+    def __init__(self):
+        super().__init__()
         
-        # Setup styling
-        self.style = ttk.Style()
-        self.style.theme_use('clam')
+        self.title("eSim Automated Tool Manager")
+        self.geometry("950x650")
+        self.minsize(850, 550)
+        
+        # Configure grid layout (1 row, 2 columns)
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(1, weight=1)
         
         # Load data
         self.registry = load_registry()
@@ -44,17 +36,68 @@ class ESimToolManagerGUI:
         self.refresh_tools_list()
 
     def setup_ui(self):
-        # Main container
-        main_frame = ttk.PanedWindow(self.root, orient=tk.VERTICAL)
-        main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+        # --- Sidebar Frame (Left) ---
+        self.sidebar_frame = ctk.CTkFrame(self, width=200, corner_radius=0)
+        self.sidebar_frame.grid(row=0, column=0, sticky="nsew")
+        self.sidebar_frame.grid_rowconfigure(6, weight=1)
         
-        # Top section: Tools Table
-        top_frame = ttk.LabelFrame(main_frame, text="Available Tools")
-        main_frame.add(top_frame, weight=2)
+        self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="eSim Tools", font=ctk.CTkFont(size=20, weight="bold"))
+        self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
         
-        # Treeview for tools
+        self.btn_install = ctk.CTkButton(self.sidebar_frame, text="Install", command=self.install_selected, state="disabled")
+        self.btn_install.grid(row=1, column=0, padx=20, pady=10)
+        
+        self.btn_update = ctk.CTkButton(self.sidebar_frame, text="Update", command=self.update_selected, state="disabled")
+        self.btn_update.grid(row=2, column=0, padx=20, pady=10)
+        
+        self.btn_uninstall = ctk.CTkButton(self.sidebar_frame, text="Uninstall", command=self.uninstall_selected, fg_color="#D32F2F", hover_color="#B71C1C", state="disabled")
+        self.btn_uninstall.grid(row=3, column=0, padx=20, pady=10)
+        
+        self.btn_check_deps = ctk.CTkButton(self.sidebar_frame, text="Check Deps", command=self.check_deps_selected, state="disabled")
+        self.btn_check_deps.grid(row=4, column=0, padx=20, pady=10)
+        
+        self.btn_refresh = ctk.CTkButton(self.sidebar_frame, text="Refresh List", command=self.refresh_tools_list, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"))
+        self.btn_refresh.grid(row=5, column=0, padx=20, pady=10)
+        
+        self.appearance_mode_label = ctk.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
+        self.appearance_mode_label.grid(row=7, column=0, padx=20, pady=(10, 0))
+        self.appearance_mode_optionemenu = ctk.CTkOptionMenu(self.sidebar_frame, values=["Light", "Dark", "System"], command=self.change_appearance_mode_event)
+        self.appearance_mode_optionemenu.grid(row=8, column=0, padx=20, pady=(10, 20))
+        self.appearance_mode_optionemenu.set("System")
+
+        # --- Main Content Frame (Right) ---
+        self.main_frame = ctk.CTkFrame(self, corner_radius=10)
+        self.main_frame.grid(row=0, column=1, padx=20, pady=20, sticky="nsew")
+        self.main_frame.grid_rowconfigure(0, weight=2)
+        self.main_frame.grid_rowconfigure(1, weight=1)
+        self.main_frame.grid_columnconfigure(0, weight=1)
+        
+        # Tools Table Frame
+        self.table_frame = ctk.CTkFrame(self.main_frame, corner_radius=10)
+        self.table_frame.grid(row=0, column=0, padx=10, pady=(10, 5), sticky="nsew")
+        
+        # We still use ttk.Treeview because CustomTkinter doesn't have a native table widget yet
+        # But we style it to look more modern
+        style = ttk.Style()
+        style.theme_use("default")
+        style.configure("Treeview", 
+                        background="#2b2b2b",
+                        foreground="white",
+                        rowheight=35,
+                        fieldbackground="#2b2b2b",
+                        bordercolor="#343638",
+                        borderwidth=0,
+                        font=("Helvetica", 11))
+        style.map('Treeview', background=[('selected', '#1f538d')])
+        style.configure("Treeview.Heading",
+                        background="#565b5e",
+                        foreground="white",
+                        relief="flat",
+                        font=("Helvetica", 11, "bold"))
+        style.map("Treeview.Heading", background=[('active', '#343638')])
+
         columns = ("name", "category", "installed_version", "latest_version", "status")
-        self.tree = ttk.Treeview(top_frame, columns=columns, show="headings", selectmode="browse")
+        self.tree = ttk.Treeview(self.table_frame, columns=columns, show="headings", selectmode="browse")
         
         self.tree.heading("name", text="Tool Name")
         self.tree.heading("category", text="Category")
@@ -62,72 +105,62 @@ class ESimToolManagerGUI:
         self.tree.heading("latest_version", text="Latest Version")
         self.tree.heading("status", text="Status")
         
-        self.tree.column("name", width=150)
-        self.tree.column("category", width=100)
-        self.tree.column("installed_version", width=120)
-        self.tree.column("latest_version", width=120)
-        self.tree.column("status", width=150)
+        self.tree.column("name", width=150, anchor="w")
+        self.tree.column("category", width=100, anchor="center")
+        self.tree.column("installed_version", width=120, anchor="center")
+        self.tree.column("latest_version", width=120, anchor="center")
+        self.tree.column("status", width=150, anchor="center")
         
-        # Scrollbar for Treeview
-        scrollbar = ttk.Scrollbar(top_frame, orient=tk.VERTICAL, command=self.tree.yview)
+        scrollbar = ttk.Scrollbar(self.table_frame, orient=tk.VERTICAL, command=self.tree.yview)
         self.tree.configure(yscrollcommand=scrollbar.set)
         
-        self.tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        self.tree.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(10, 0), pady=10)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y, padx=(0, 10), pady=10)
         
-        # Bind selection event
         self.tree.bind("<<TreeviewSelect>>", self.on_tool_select)
         
-        # Action Buttons Frame
-        action_frame = ttk.Frame(top_frame)
-        action_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=10)
+        # Console Output Frame
+        self.console_frame = ctk.CTkFrame(self.main_frame, corner_radius=10)
+        self.console_frame.grid(row=1, column=0, padx=10, pady=(5, 10), sticky="nsew")
         
-        self.btn_install = ttk.Button(action_frame, text="Install", command=self.install_selected, state=tk.DISABLED)
-        self.btn_install.pack(fill=tk.X, pady=5)
+        self.console_label = ctk.CTkLabel(self.console_frame, text="Console Output", font=ctk.CTkFont(weight="bold"))
+        self.console_label.pack(anchor="w", padx=10, pady=(10, 0))
         
-        self.btn_update = ttk.Button(action_frame, text="Update", command=self.update_selected, state=tk.DISABLED)
-        self.btn_update.pack(fill=tk.X, pady=5)
-        
-        self.btn_uninstall = ttk.Button(action_frame, text="Uninstall", command=self.uninstall_selected, state=tk.DISABLED)
-        self.btn_uninstall.pack(fill=tk.X, pady=5)
-        
-        self.btn_check_deps = ttk.Button(action_frame, text="Check Deps", command=self.check_deps_selected, state=tk.DISABLED)
-        self.btn_check_deps.pack(fill=tk.X, pady=5)
-        
-        ttk.Separator(action_frame, orient=tk.HORIZONTAL).pack(fill=tk.X, pady=10)
-        
-        self.btn_refresh = ttk.Button(action_frame, text="Refresh List", command=self.refresh_tools_list)
-        self.btn_refresh.pack(fill=tk.X, pady=5)
-        
-        self.btn_update_all = ttk.Button(action_frame, text="Update All", command=self.update_all)
-        self.btn_update_all.pack(fill=tk.X, pady=5)
-        
-        # Bottom section: Console Output
-        bottom_frame = ttk.LabelFrame(main_frame, text="Console Output")
-        main_frame.add(bottom_frame, weight=1)
-        
-        self.console = scrolledtext.ScrolledText(bottom_frame, wrap=tk.WORD, bg="black", fg="white", font=("Consolas", 10))
-        self.console.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+        self.console = ctk.CTkTextbox(self.console_frame, wrap="word", font=ctk.CTkFont(family="Consolas", size=12))
+        self.console.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
         self.console.configure(state="disabled")
+
+    def change_appearance_mode_event(self, new_appearance_mode: str):
+        ctk.set_appearance_mode(new_appearance_mode)
+        # Update treeview colors based on mode
+        style = ttk.Style()
+        if new_appearance_mode == "Light":
+            style.configure("Treeview", background="#ebebeb", foreground="black", fieldbackground="#ebebeb")
+            style.configure("Treeview.Heading", background="#d3d3d3", foreground="black")
+        else:
+            style.configure("Treeview", background="#2b2b2b", foreground="white", fieldbackground="#2b2b2b")
+            style.configure("Treeview.Heading", background="#565b5e", foreground="white")
         
-        # Setup tags for colored output
-        self.console.tag_config("stdout", foreground="white")
-        self.console.tag_config("stderr", foreground="red")
-        self.console.tag_config("success", foreground="green")
-        self.console.tag_config("warning", foreground="yellow")
-        
-        # Redirect stdout/stderr (optional, for capturing print statements)
-        # sys.stdout = TextRedirector(self.console, "stdout")
-        # sys.stderr = TextRedirector(self.console, "stderr")
-        
-    def log(self, message, tag="stdout"):
+    def log(self, message, level="info"):
         self.console.configure(state="normal")
-        self.console.insert(tk.END, message + "\n", tag)
+        
+        # Determine prefix and color based on level (customtkinter textbox doesn't support tags yet like tk.Text, 
+        # so we format the string cleanly)
+        prefix = ""
+        if level == "error":
+            prefix = "[ERROR] "
+        elif level == "success":
+            prefix = "[SUCCESS] "
+        elif level == "warning":
+            prefix = "[WARNING] "
+        else:
+            prefix = "[INFO] "
+            
+        self.console.insert(tk.END, prefix + message + "\n")
         self.console.see(tk.END)
         self.console.configure(state="disabled")
 
     def refresh_tools_list(self):
-        # Clear existing items
         for item in self.tree.get_children():
             self.tree.delete(item)
             
@@ -143,8 +176,6 @@ class ESimToolManagerGUI:
             
             if installed_info:
                 installed_version = installed_info.get("version", "Unknown")
-                
-                # Check for update (simplified for UI speed)
                 try:
                     from packaging.version import parse
                     if parse(latest_version) > parse(installed_version):
@@ -165,54 +196,51 @@ class ESimToolManagerGUI:
                 display_name, category, installed_version, latest_version, status
             ), tags=tags)
             
-        # Configure tag colors
-        self.tree.tag_configure("installed", foreground="green")
-        self.tree.tag_configure("warning", foreground="orange")
-        self.tree.tag_configure("not_installed", foreground="gray")
+        self.tree.tag_configure("installed", foreground="#4CAF50") # Green
+        self.tree.tag_configure("warning", foreground="#FF9800") # Orange
+        self.tree.tag_configure("not_installed", foreground="#9E9E9E") # Gray
         
-        self.log("Tools list refreshed.", "stdout")
+        self.log("Tools list refreshed.")
         
     def on_tool_select(self, event):
         selected = self.tree.selection()
         if not selected:
-            self.btn_install.config(state=tk.DISABLED)
-            self.btn_update.config(state=tk.DISABLED)
-            self.btn_uninstall.config(state=tk.DISABLED)
-            self.btn_check_deps.config(state=tk.DISABLED)
+            self.btn_install.configure(state="disabled")
+            self.btn_update.configure(state="disabled")
+            self.btn_uninstall.configure(state="disabled")
+            self.btn_check_deps.configure(state="disabled")
             return
             
         tool_id = selected[0]
         item = self.tree.item(tool_id)
         status = item['values'][4]
         
-        self.btn_check_deps.config(state=tk.NORMAL)
+        self.btn_check_deps.configure(state="normal")
         
         if status == "Not Installed":
-            self.btn_install.config(state=tk.NORMAL)
-            self.btn_update.config(state=tk.DISABLED)
-            self.btn_uninstall.config(state=tk.DISABLED)
+            self.btn_install.configure(state="normal")
+            self.btn_update.configure(state="disabled")
+            self.btn_uninstall.configure(state="disabled")
         elif status == "Update Available":
-            self.btn_install.config(state=tk.DISABLED)
-            self.btn_update.config(state=tk.NORMAL)
-            self.btn_uninstall.config(state=tk.NORMAL)
+            self.btn_install.configure(state="disabled")
+            self.btn_update.configure(state="normal")
+            self.btn_uninstall.configure(state="normal")
         else: # Installed
-            self.btn_install.config(state=tk.DISABLED)
-            self.btn_update.config(state=tk.DISABLED)
-            self.btn_uninstall.config(state=tk.NORMAL)
+            self.btn_install.configure(state="disabled")
+            self.btn_update.configure(state="disabled")
+            self.btn_uninstall.configure(state="normal")
 
     def run_in_thread(self, target_func, *args):
-        """Helper to run long tasks without freezing GUI"""
-        self.btn_refresh.config(state=tk.DISABLED)
+        self.btn_refresh.configure(state="disabled")
         
         def wrapper():
             try:
                 target_func(*args)
             except Exception as e:
-                self.log(f"Error: {str(e)}", "stderr")
+                self.log(f"{str(e)}", "error")
             finally:
-                # Schedule GUI updates back on the main thread
-                self.root.after(0, self.refresh_tools_list)
-                self.root.after(0, lambda: self.btn_refresh.config(state=tk.NORMAL))
+                self.after(0, self.refresh_tools_list)
+                self.after(0, lambda: self.btn_refresh.configure(state="normal"))
                 
         threading.Thread(target=wrapper, daemon=True).start()
 
@@ -221,14 +249,14 @@ class ESimToolManagerGUI:
         if not selected: return
         tool_name = selected[0]
         
-        self.log(f"Starting installation for {tool_name}...", "stdout")
+        self.log(f"Starting installation for {tool_name}...")
         
         def task():
             success = installer.install_tool(tool_name, self.registry)
             if success:
                 self.log(f"Successfully installed {tool_name}", "success")
             else:
-                self.log(f"Failed to install {tool_name}. Check dependencies or permissions.", "stderr")
+                self.log(f"Failed to install {tool_name}. Check dependencies or permissions.", "error")
                 
         self.run_in_thread(task)
 
@@ -240,14 +268,14 @@ class ESimToolManagerGUI:
         if not messagebox.askyesno("Confirm", f"Are you sure you want to uninstall {tool_name}?"):
             return
             
-        self.log(f"Starting uninstallation for {tool_name}...", "stdout")
+        self.log(f"Starting uninstallation for {tool_name}...")
         
         def task():
             success = installer.uninstall_tool(tool_name, self.registry)
             if success:
                 self.log(f"Successfully uninstalled {tool_name}", "success")
             else:
-                self.log(f"Failed to uninstall {tool_name}.", "stderr")
+                self.log(f"Failed to uninstall {tool_name}.", "error")
                 
         self.run_in_thread(task)
 
@@ -256,32 +284,15 @@ class ESimToolManagerGUI:
         if not selected: return
         tool_name = selected[0]
         
-        self.log(f"Starting update for {tool_name}...", "stdout")
+        self.log(f"Starting update for {tool_name}...")
         
         def task():
             success = updater.update_tool(tool_name, self.registry)
             if success:
                 self.log(f"Successfully updated {tool_name}", "success")
             else:
-                self.log(f"Failed to update {tool_name}.", "stderr")
+                self.log(f"Failed to update {tool_name}.", "error")
                 
-        self.run_in_thread(task)
-
-    def update_all(self):
-        if not messagebox.askyesno("Confirm", "Update all available tools?"):
-            return
-            
-        self.log("Checking for updates for all tools...", "stdout")
-        
-        def task():
-            results = updater.update_all_tools(self.registry)
-            for name, success in results.items():
-                if success:
-                    self.log(f"Successfully updated {name}", "success")
-                else:
-                    self.log(f"Failed to update {name}.", "stderr")
-            self.log("Batch update complete.", "stdout")
-            
         self.run_in_thread(task)
 
     def check_deps_selected(self):
@@ -289,7 +300,7 @@ class ESimToolManagerGUI:
         if not selected: return
         tool_name = selected[0]
         
-        self.log(f"\nChecking dependencies for {tool_name}...", "stdout")
+        self.log(f"\nChecking dependencies for {tool_name}...")
         
         def task():
             deps = dependency_checker.check_dependencies(tool_name, self.registry)
@@ -304,18 +315,17 @@ class ESimToolManagerGUI:
                 inst_ver = info.get("installed_version", "None")
                 
                 if status == "ok":
-                    self.log(f"  [OK] {dep_name} (Installed: {inst_ver} >= Required: {req_ver})", "success")
+                    self.log(f"  {dep_name} (Installed: {inst_ver} >= Required: {req_ver})", "success")
                 elif status == "missing":
-                    self.log(f"  [MISSING] {dep_name} (Required: {req_ver})", "stderr")
+                    self.log(f"  {dep_name} (Required: {req_ver})", "error")
                 elif status == "incompatible":
-                    self.log(f"  [INCOMPATIBLE] {dep_name} (Installed: {inst_ver} < Required: {req_ver})", "warning")
+                    self.log(f"  {dep_name} (Installed: {inst_ver} < Required: {req_ver})", "warning")
                     
         self.run_in_thread(task)
 
 def main():
-    root = tk.Tk()
-    app = ESimToolManagerGUI(root)
-    root.mainloop()
+    app = ESimToolManagerGUI()
+    app.mainloop()
 
 if __name__ == "__main__":
     main()

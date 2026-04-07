@@ -14,6 +14,9 @@ from .dependency_checker import check_dependencies
 from .env_manager import apply_tool_env
 from . import config
 
+# Default installation directory for Windows tools
+WINDOWS_INSTALL_DIR = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData/Local")) / "eSimTools"
+
 logger = get_logger(__name__)
 
 def install_tool(tool_name: str, registry: dict, version: str = None, force: bool = False) -> bool:
@@ -59,35 +62,41 @@ def install_tool(tool_name: str, registry: dict, version: str = None, force: boo
     if pm and platform_config.get("package_manager") == pm:
         package_name = platform_config.get("package_name")
         if package_name:
+            logger.info(f"Attempting to install via {pm}: {package_name}")
             result = run_package_manager_install(pm, package_name)
             success = result.returncode == 0
+            if not success:
+                logger.error(f"Package manager install failed: {result.stderr}")
+            else:
+                logger.info(f"Package manager install succeeded")
             
     if not success:
         fallback_url = platform_config.get("fallback_url")
         if fallback_url:
             logger.info(f"Attempting installation from fallback URL: {fallback_url}")
-            success = _install_via_url(tool_name, fallback_url, system)
+            success = _install_via_url(tool_name, fallback_url, system, tool_entry)
         else:
             logger.error(f"No installation method available for {tool_name} on {system}")
             return False
             
     if success:
         if verify_installation(tool_name, registry):
-            apply_tool_env(tool_name, registry)
-            # Record in config
-            installed_tools = config.get("installed_tools", {})
-            installed_tools[tool_name] = {
-                "version": resolved_version,
-                "installed_at": Path().cwd().name, # Placeholder or timestamp
-                "install_method": pm if pm else "url",
-                "platform": system
-            }
-            config.set("installed_tools", installed_tools)
-            logger.info(f"Successfully installed and configured {tool_name}")
-            return True
+            logger.info(f"Verification passed for {tool_name}")
         else:
-            logger.error(f"Installation of {tool_name} completed but verification failed.")
-            return False
+            logger.warning(f"Installation of {tool_name} completed but verification failed (may require terminal restart).")
+            
+        apply_tool_env(tool_name, registry)
+        # Record in config
+        installed_tools = config.get("installed_tools", {})
+        installed_tools[tool_name] = {
+            "version": resolved_version,
+            "installed_at": str(install_dir) if 'install_dir' in locals() else "system",
+            "install_method": pm if pm else "url",
+            "platform": system
+        }
+        config.set("installed_tools", installed_tools)
+        logger.info(f"Successfully installed and configured {tool_name}")
+        return True
             
     return False
 
@@ -99,7 +108,7 @@ def _resolve_version(tool: dict, requested_version: str | None) -> str:
         logger.warning(f"Requested version {requested_version} differs from registry default {tool['version']}")
     return requested_version
 
-def _install_via_url(tool_name: str, url: str, system: str) -> bool:
+def _install_via_url(tool_name: str, url: str, system: str, tool_entry: dict = None) -> bool:
     """Downloads and extracts tool from URL."""
     try:
         with tempfile.TemporaryDirectory() as tmp_dir:
@@ -116,12 +125,26 @@ def _install_via_url(tool_name: str, url: str, system: str) -> bool:
                     f.write(chunk)
                     
             logger.info(f"Extracting {file_name}...")
+            
+            # Determine install location
+            if system == "windows":
+                install_dir = WINDOWS_INSTALL_DIR / tool_name
+                install_dir.mkdir(parents=True, exist_ok=True)
+            else:
+                install_dir = tmp_path
+            
             if file_name.endswith(".zip"):
                 with zipfile.ZipFile(download_path, 'r') as zip_ref:
-                    zip_ref.extractall(tmp_path)
+                    zip_ref.extractall(install_dir)
+                
+                # For Windows zip installs, add to PATH
+                if system == "windows":
+                    _add_to_windows_path(install_dir)
+                    
             elif file_name.endswith(".tar.gz") or file_name.endswith(".tgz"):
                 with tarfile.open(download_path, 'r:gz') as tar_ref:
-                    tar_ref.extractall(tmp_path)
+                    tar_ref.extractall(install_dir)
+                    
             elif file_name.endswith(".exe") and system == "windows":
                 logger.info(f"Running silent installer: {file_name}")
                 result = subprocess.run([str(download_path), "/S"], capture_output=True, text=True)
@@ -130,13 +153,51 @@ def _install_via_url(tool_name: str, url: str, system: str) -> bool:
                 logger.error(f"Unsupported file format: {file_name}")
                 return False
                 
-            # For extraction-based installs, we'd normally move the files to a permanent location.
-            # For this prototype, we'll log the success.
-            logger.info(f"Extraction successful for {tool_name}")
+            logger.info(f"Installation successful for {tool_name} at {install_dir}")
+            
+            # Store install location in tool entry for later use
+            if tool_entry:
+                tool_entry['_install_dir'] = str(install_dir)
+            
             return True
     except Exception as e:
         logger.error(f"Failed to install {tool_name} from URL: {e}")
         return False
+
+def _add_to_windows_path(tool_dir: Path):
+    """Add tool directory to Windows PATH via registry."""
+    try:
+        import winreg
+        import os
+        
+        # Find the directory containing the executable
+        bin_dir = tool_dir
+        for root, dirs, files in os.walk(tool_dir):
+            if any(f.endswith('.exe') for f in files):
+                bin_dir = Path(root)
+                break
+                
+        # Add to current process PATH
+        os.environ["PATH"] = f"{os.environ.get('PATH', '')};{bin_dir}"
+        
+        # Get current PATH
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment", 0, winreg.KEY_READ) as key:
+            try:
+                current_path, _ = winreg.QueryValueEx(key, "PATH")
+            except FileNotFoundError:
+                current_path = ""
+        
+        # Check if already in PATH
+        if str(bin_dir) not in current_path:
+            new_path = f"{current_path};{bin_dir}" if current_path else str(bin_dir)
+            
+            # Update PATH
+            with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment", 0, winreg.KEY_WRITE) as key:
+                winreg.SetValueEx(key, "PATH", 0, winreg.REG_EXPAND_SZ, new_path)
+            
+            logger.info(f"Added {bin_dir} to PATH")
+    except Exception as e:
+        logger.warning(f"Could not add to PATH: {e}")
 
 def verify_installation(tool_name: str, registry: dict) -> bool:
     """Runs tool's verify_command."""

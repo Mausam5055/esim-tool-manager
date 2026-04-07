@@ -31,14 +31,11 @@ def load_config() -> dict:
         return DEFAULT_CONFIG
 
 def save_config(data: dict) -> None:
-    """Writes config to disk atomically."""
+    """Writes config to disk."""
     CONFIG_DIR.mkdir(parents=True, exist_ok=True)
     try:
-        # Atomic write (write to temp file then rename)
-        temp_file = CONFIG_FILE.with_suffix(".tmp")
-        with open(temp_file, 'w') as f:
+        with open(CONFIG_FILE, 'w') as f:
             json.dump(data, f, indent=2)
-        os.replace(temp_file, CONFIG_FILE)
     except Exception as e:
         logger.error(f"Failed to save config: {e}")
 

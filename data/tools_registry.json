@@ -13,9 +13,9 @@
           "fallback_url": "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41.tar.gz"
         },
         "windows": {
-          "package_manager": "chocolatey",
+          "package_manager": null,
           "package_name": "ngspice",
-          "fallback_url": "https://sourceforge.net/projects/ngspice/files/ng-spice-rework/41/ngspice-41_64.zip"
+          "fallback_url": "https://github.com/ngspice/ngspice/archive/refs/heads/master.zip"
         },
         "darwin": {
           "package_manager": "homebrew",
@@ -51,9 +51,9 @@
           "fallback_url": null
         },
         "windows": {
-          "package_manager": "chocolatey",
+          "package_manager": null,
           "package_name": "kicad",
-          "fallback_url": "https://downloads.kicad.org/kicad/windows/packages/kicad-7.0.0_x86_64.exe"
+          "fallback_url": "https://github.com/KiCad/kicad-source-mirror/releases/download/8.0.1/kicad-8.0.1-x86_64.exe"
         },
         "darwin": {
           "package_manager": "homebrew",
@@ -88,9 +88,9 @@
           "fallback_url": null
         },
         "windows": {
-          "package_manager": "chocolatey",
+          "package_manager": null,
           "package_name": "openmodelica",
-          "fallback_url": "https://build.openmodelica.org/omc/builds/windows/releases/1.21/0/OpenModelica-v1.21.0-64bit.exe"
+          "fallback_url": "https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe"
         },
         "darwin": {
           "package_manager": "homebrew",

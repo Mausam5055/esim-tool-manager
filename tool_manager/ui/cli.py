@@ -61,12 +61,17 @@ def update(tool_name: Optional[str] = typer.Argument(None, help="Name of the too
     """Updates a tool or all tools."""
     registry = load_registry()
     if tool_name:
-        if updater.update_tool(tool_name, registry):
+        update_info = updater.check_tool_update(tool_name, registry)
+        if not update_info or not update_info.get("update_available"):
+            display.print_info(f"No updates available for {tool_name}")
+        elif updater.update_tool(tool_name, registry):
             display.print_success(f"Updated {tool_name}")
         else:
             display.print_error(f"Failed to update {tool_name}")
     else:
         results = updater.update_all_tools(registry)
+        if not results:
+            display.print_info("No updates available for any installed tools.")
         for name, success in results.items():
             if success:
                 display.print_success(f"Updated {name}")

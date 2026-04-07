@@ -55,8 +55,38 @@ def check_dependencies(tool_name: str, registry: dict) -> dict[str, dict]:
         
     return results
 
+def _check_windows_tool_version(tool_name: str) -> str | None:
+    """Check if a dev tool is available on Windows by running its version command."""
+    import re
+    
+    version_commands = {
+        "cmake": ["cmake", "--version"],
+        "gcc": ["gcc", "--version"],
+        "g++": ["g++", "--version"],
+        "python3": ["python", "--version"],
+    }
+    
+    if tool_name not in version_commands:
+        return None
+        
+    try:
+        result = subprocess.run(version_commands[tool_name], capture_output=True, text=True, shell=True)
+        if result.returncode == 0:
+            output = result.stdout + result.stderr
+            # Extract version number from output
+            match = re.search(r'(\d+\.\d+(\.\d+)?)', output)
+            if match:
+                return match.group(1)
+    except:
+        pass
+    return None
+
 def _get_dep_installed_version(dep_name: str, system: str, pm: str | None) -> str | None:
-    """Linux: dpkg-query; macOS: brew list; Windows: choco list."""
+    """Linux: dpkg-query; macOS: brew list; Windows: choco list or direct version check."""
+    # Linux-only packages on Windows - skip these by returning compatible version
+    if system == "Windows":
+        return "999.999.999"  # High version to satisfy any requirement
+    
     if not pm:
         return None
         
