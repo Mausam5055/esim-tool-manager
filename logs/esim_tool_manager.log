@@ -1209,3 +1209,11 @@ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
 [2026-04-07 21:02:06,945] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe
 [2026-04-07 21:02:06,946] [INFO] [tool_manager.installer] — Downloading https://build.openmodelica.org/omc/builds/windows/releases/1.25/5/64bit/OpenModelica-v1.25.5-64bit.exe...
 [2026-04-07 21:02:09,854] [WARNING] [tool_manager.installer] — Installation aborted by user.
+[2026-04-07 21:05:32,378] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/ngspice/ngspice/archive/refs/heads/master.zip
+[2026-04-07 21:05:32,379] [INFO] [tool_manager.installer] — Downloading https://github.com/ngspice/ngspice/archive/refs/heads/master.zip...
+[2026-04-07 21:05:43,047] [INFO] [tool_manager.installer] — Extracting master.zip...
+[2026-04-07 21:05:47,367] [INFO] [tool_manager.installer] — Installation successful for ngspice at C:\Users\rikik\AppData\Local\eSimTools\ngspice
+[2026-04-07 21:05:47,401] [WARNING] [tool_manager.installer] — Installation of ngspice completed but verification failed (may require terminal restart).
+[2026-04-07 21:05:47,401] [INFO] [tool_manager.env_manager] — Updated Registry (HKCU\Environment): NGSPICE_HOME=/usr/share/ngspice
+[2026-04-07 21:05:47,407] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {'ngspice': {'version': '41', 'installed_at': 'system', 'install_method': 'chocolatey', 'platform': 'windows'}}
+[2026-04-07 21:05:47,407] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice

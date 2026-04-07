@@ -32,7 +32,7 @@ This project successfully implements **all 5 requirements** and the **optional f
 ### Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/esim-tool-manager.git
+git clone https://github.com/Eyantra698Sumanto/esim-tool-manager.git
 cd esim-tool-manager
 
 # Create virtual environment
@@ -259,7 +259,7 @@ The tool automatically configures environment variables for installed tools:
 
 **Built for eSim Summer Fellowship 2026 — Task 5: Automated Tool Manager**
 
-[![GitHub Stars](https://img.shields.io/github/stars/YOUR_USERNAME/esim-tool-manager?style=social)](https://github.com/YOUR_USERNAME/esim-tool-manager)
-[![GitHub Forks](https://img.shields.io/github/forks/YOUR_USERNAME/esim-tool-manager?style=social)](https://github.com/YOUR_USERNAME/esim-tool-manager/fork)
+[![GitHub Stars](https://img.shields.io/github/stars/Eyantra698Sumanto/esim-tool-manager?style=social)](https://github.com/Eyantra698Sumanto/esim-tool-manager)
+[![GitHub Forks](https://img.shields.io/github/forks/Eyantra698Sumanto/esim-tool-manager?style=social)](https://github.com/Eyantra698Sumanto/esim-tool-manager/fork)
 
 </div>
