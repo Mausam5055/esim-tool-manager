@@ -101,7 +101,7 @@ esim-tool config-set log_level DEBUG
 ```mermaid
 graph TD
     CLI[CLI Interface<br/>Typer + Rich] --> INS[Installer<br/>Download & Install]
-    GUI[GUI Interface<br/>Tkinter] --> INS
+    GUI[GUI Interface<br/>CustomTkinter] --> INS
     CLI --> UPD[Updater<br/>Version Management]
     GUI --> UPD
     CLI --> DEP[Dependency Checker<br/>Validation Engine]
@@ -229,7 +229,6 @@ The tool automatically configures environment variables for installed tools:
 
 ## 🚀 Future Enhancements
 
-- **GUI Interface**: Tkinter/PyQt6-based graphical frontend
 - **Docker Support**: Containerized tool environments
 - **Plugin System**: Community-contributed tool definitions
 - **Telemetry**: Usage analytics for improvement
@@ -237,23 +236,9 @@ The tool automatically configures environment variables for installed tools:
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/esim-tool-manager/issues)
-- **Documentation**: [Wiki](https://github.com/YOUR_USERNAME/esim-tool-manager/wiki)
+- **Issues**: [GitHub Issues](https://github.com/Eyantra698Sumanto/esim-tool-manager/issues)
+- **Documentation**: [Wiki](https://github.com/Eyantra698Sumanto/esim-tool-manager/wiki)
 - **Email**: contact-esim@fossee.in
-
-## 🏆 Evaluation Criteria
-
-| Criteria | Score | Justification |
-|----------|-------|---------------|
-| **Functionality** | ⭐⭐⭐⭐⭐ | All 5 requirements implemented |
-| **Design** | ⭐⭐⭐⭐⭐ | Modular, clean architecture |
-| **Documentation** | ⭐⭐⭐⭐⭐ | Comprehensive with diagrams |
-| **Creativity** | ⭐⭐⭐⭐⭐ | Version pinning, incompatibility detection |
-| **Code Quality** | ⭐⭐⭐⭐⭐ | Type hints, tests, best practices |
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
