@@ -1217,3 +1217,21 @@ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
 [2026-04-07 21:05:47,401] [INFO] [tool_manager.env_manager] — Updated Registry (HKCU\Environment): NGSPICE_HOME=/usr/share/ngspice
 [2026-04-07 21:05:47,407] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {'ngspice': {'version': '41', 'installed_at': 'system', 'install_method': 'chocolatey', 'platform': 'windows'}}
 [2026-04-07 21:05:47,407] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-08 23:58:57,551] [INFO] [tool_manager.config] — Config file not found. Creating default config at <MagicMock name='CONFIG_FILE' id='2470927374656'>
+[2026-04-08 23:58:57,710] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\AppData\Local\Temp\pytest-of-rikik\pytest-2\test_get_and_set0\config.json
+[2026-04-08 23:58:57,734] [DEBUG] [tool_manager.config] — Config updated: test_key = test_value
+[2026-04-08 23:58:57,763] [DEBUG] [tool_manager.config] — Config updated: installed_tools.ngspice.version = 41
+[2026-04-08 23:58:57,997] [WARNING] [tool_manager.installer] — Requested version 40 differs from registry default 41
+[2026-04-08 23:58:58,170] [INFO] [tool_manager.installer] — Attempting to install via apt: ngspice
+[2026-04-08 23:58:58,171] [INFO] [tool_manager.installer] — Package manager install succeeded
+[2026-04-08 23:58:58,171] [INFO] [tool_manager.installer] — Verification passed for ngspice
+[2026-04-08 23:58:58,172] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-08 23:59:09,576] [INFO] [tool_manager.config] — Config file not found. Creating default config at <MagicMock name='CONFIG_FILE' id='2768656047072'>
+[2026-04-08 23:59:09,589] [INFO] [tool_manager.config] — Config file not found. Creating default config at C:\Users\rikik\AppData\Local\Temp\pytest-of-rikik\pytest-3\test_get_and_set0\config.json
+[2026-04-08 23:59:09,590] [DEBUG] [tool_manager.config] — Config updated: test_key = test_value
+[2026-04-08 23:59:09,592] [DEBUG] [tool_manager.config] — Config updated: installed_tools.ngspice.version = 41
+[2026-04-08 23:59:09,650] [WARNING] [tool_manager.installer] — Requested version 40 differs from registry default 41
+[2026-04-08 23:59:09,675] [INFO] [tool_manager.installer] — Attempting to install via apt: ngspice
+[2026-04-08 23:59:09,675] [INFO] [tool_manager.installer] — Package manager install succeeded
+[2026-04-08 23:59:09,676] [INFO] [tool_manager.installer] — Verification passed for ngspice
+[2026-04-08 23:59:09,677] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice

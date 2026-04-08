@@ -1,0 +1,123 @@
+\contentsline {chapter}{Declaration}{i}{chapter*.1}%
+\contentsline {chapter}{Acknowledgement}{ii}{chapter*.2}%
+\contentsline {chapter}{Abstract}{iii}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.7}%
+\contentsline {section}{\numberline {1.1}Background}{1}{section.8}%
+\contentsline {section}{\numberline {1.2}Problem Statement}{1}{section.9}%
+\contentsline {section}{\numberline {1.3}Project Objectives}{2}{section.16}%
+\contentsline {section}{\numberline {1.4}Project Scope}{2}{section.17}%
+\contentsline {section}{\numberline {1.5}Report Structure}{2}{section.18}%
+\contentsline {chapter}{\numberline {2}Literature Survey}{3}{chapter.19}%
+\contentsline {section}{\numberline {2.1}Overview of Electronic Design Automation Tools}{3}{section.20}%
+\contentsline {subsection}{\numberline {2.1.1}eSim Platform}{3}{subsection.21}%
+\contentsline {subsection}{\numberline {2.1.2}Related Open-Source EDA Tools}{3}{subsection.22}%
+\contentsline {section}{\numberline {2.2}Existing Package Management Solutions}{4}{section.24}%
+\contentsline {subsection}{\numberline {2.2.1}Linux Package Managers}{4}{subsection.25}%
+\contentsline {subsection}{\numberline {2.2.2}MacOS Package Managers}{4}{subsection.26}%
+\contentsline {subsection}{\numberline {2.2.3}Windows Package Managers}{4}{subsection.27}%
+\contentsline {section}{\numberline {2.3}Technology Stack Analysis}{5}{section.28}%
+\contentsline {subsection}{\numberline {2.3.1}Python as the Implementation Language}{5}{subsection.29}%
+\contentsline {subsection}{\numberline {2.3.2}CLI Framework: Typer vs Alternatives}{5}{subsection.30}%
+\contentsline {subsection}{\numberline {2.3.3}GUI Framework: CustomTkinter vs Alternatives}{5}{subsection.31}%
+\contentsline {section}{\numberline {2.4}Gaps in Existing Solutions}{6}{section.33}%
+\contentsline {chapter}{\numberline {3}System Architecture}{7}{chapter.34}%
+\contentsline {section}{\numberline {3.1}Architectural Overview}{7}{section.35}%
+\contentsline {section}{\numberline {3.2}Architecture Diagram}{8}{section.40}%
+\contentsline {section}{\numberline {3.3}Module Descriptions}{8}{section.42}%
+\contentsline {subsection}{\numberline {3.3.1}CLI Module (cli.py)}{8}{subsection.43}%
+\contentsline {subsection}{\numberline {3.3.2}GUI Module (gui.py)}{9}{subsection.44}%
+\contentsline {subsection}{\numberline {3.3.3}Installer Module (installer.py)}{9}{subsection.45}%
+\contentsline {subsection}{\numberline {3.3.4}Updater Module (updater.py)}{9}{subsection.49}%
+\contentsline {subsection}{\numberline {3.3.5}Dependency Checker Module (dependency\_checker.py)}{9}{subsection.50}%
+\contentsline {subsection}{\numberline {3.3.6}Environment Manager Module (env\_manager.py)}{10}{subsection.51}%
+\contentsline {section}{\numberline {3.4}Data Flow Architecture}{10}{section.52}%
+\contentsline {section}{\numberline {3.5}Package Bridge Module (package\_bridge.py)}{10}{section.54}%
+\contentsline {section}{\numberline {3.6}Configuration Module (config.py)}{11}{section.55}%
+\contentsline {section}{\numberline {3.7}Logger Module (logger.py)}{11}{section.56}%
+\contentsline {section}{\numberline {3.8}Data Storage Architecture}{11}{section.57}%
+\contentsline {subsection}{\numberline {3.8.1}Tools Registry (tools\_registry.json)}{11}{subsection.58}%
+\contentsline {subsection}{\numberline {3.8.2}User Configuration (config.json)}{11}{subsection.59}%
+\contentsline {chapter}{\numberline {4}Requirement Analysis}{12}{chapter.60}%
+\contentsline {section}{\numberline {4.1}Functional Requirements}{12}{section.61}%
+\contentsline {subsection}{\numberline {4.1.1}Tool Installation Management}{12}{subsection.62}%
+\contentsline {subsection}{\numberline {4.1.2}Version Control}{12}{subsection.63}%
+\contentsline {subsection}{\numberline {4.1.3}Update and Upgrade System}{12}{subsection.64}%
+\contentsline {subsection}{\numberline {4.1.4}Configuration Handling}{13}{subsection.65}%
+\contentsline {subsection}{\numberline {4.1.5}Dependency Management}{13}{subsection.66}%
+\contentsline {subsection}{\numberline {4.1.6}User Interface}{13}{subsection.67}%
+\contentsline {section}{\numberline {4.2}Non-Functional Requirements}{13}{section.68}%
+\contentsline {subsection}{\numberline {4.2.1}Performance}{13}{subsection.69}%
+\contentsline {subsection}{\numberline {4.2.2}Reliability}{13}{subsection.70}%
+\contentsline {subsection}{\numberline {4.2.3}Usability}{13}{subsection.71}%
+\contentsline {subsection}{\numberline {4.2.4}Compatibility}{14}{subsection.72}%
+\contentsline {subsection}{\numberline {4.2.5}Maintainability}{14}{subsection.73}%
+\contentsline {section}{\numberline {4.3}User Stories}{14}{section.74}%
+\contentsline {subsection}{\numberline {4.3.1}New User Scenario}{14}{subsection.75}%
+\contentsline {subsection}{\numberline {4.3.2}Power User Scenario}{14}{subsection.76}%
+\contentsline {subsection}{\numberline {4.3.3}Troubleshooting Scenario}{14}{subsection.77}%
+\contentsline {section}{\numberline {4.4}Use Case Diagram}{15}{section.78}%
+\contentsline {chapter}{\numberline {5}Design and Implementation}{16}{chapter.80}%
+\contentsline {section}{\numberline {5.1}Design Principles}{16}{section.81}%
+\contentsline {subsection}{\numberline {5.1.1}Modularity}{16}{subsection.82}%
+\contentsline {subsection}{\numberline {5.1.2}Layered Architecture}{16}{subsection.83}%
+\contentsline {subsection}{\numberline {5.1.3}Cross-Platform Compatibility}{16}{subsection.84}%
+\contentsline {section}{\numberline {5.2}Implementation Details}{16}{section.85}%
+\contentsline {subsection}{\numberline {5.2.1}Installation Engine}{16}{subsection.86}%
+\contentsline {subsection}{\numberline {5.2.2}Version Comparison}{17}{subsection.97}%
+\contentsline {subsection}{\numberline {5.2.3}Dependency Resolution}{17}{subsection.106}%
+\contentsline {subsection}{\numberline {5.2.4}Environment Configuration}{18}{subsection.117}%
+\contentsline {section}{\numberline {5.3}Database Schema}{18}{section.122}%
+\contentsline {subsection}{\numberline {5.3.1}Tools Registry Schema}{18}{subsection.123}%
+\contentsline {subsection}{\numberline {5.3.2}User Configuration Schema}{18}{subsection.147}%
+\contentsline {section}{\numberline {5.4}Error Handling Strategy}{19}{section.163}%
+\contentsline {subsection}{\numberline {5.4.1}Subprocess Failures}{19}{subsection.164}%
+\contentsline {subsection}{\numberline {5.4.2}Network Errors}{19}{subsection.165}%
+\contentsline {subsection}{\numberline {5.4.3}Configuration Errors}{19}{subsection.166}%
+\contentsline {chapter}{\numberline {6}User Interface Design}{20}{chapter.167}%
+\contentsline {section}{\numberline {6.1}Design Philosophy}{20}{section.168}%
+\contentsline {section}{\numberline {6.2}Command-Line Interface Design}{20}{section.169}%
+\contentsline {subsection}{\numberline {6.2.1}CLI Output Formats}{20}{subsection.170}%
+\contentsline {subsection}{\numberline {6.2.2}CLI Command Structure}{21}{subsection.171}%
+\contentsline {subsection}{\numberline {6.2.3}CLI Operation Examples}{21}{subsection.173}%
+\contentsline {section}{\numberline {6.3}Graphical User Interface Design}{22}{section.176}%
+\contentsline {subsection}{\numberline {6.3.1}GUI Application Window}{22}{subsection.177}%
+\contentsline {subsection}{\numberline {6.3.2}GUI Features}{23}{subsection.179}%
+\contentsline {subsection}{\numberline {6.3.3}GUI Color Scheme}{23}{subsection.180}%
+\contentsline {section}{\numberline {6.4}Verification \& Logging Interface}{23}{section.181}%
+\contentsline {chapter}{\numberline {7}Testing and Results}{24}{chapter.183}%
+\contentsline {section}{\numberline {7.1}Testing Strategy}{24}{section.184}%
+\contentsline {subsection}{\numberline {7.1.1}Unit Testing}{24}{subsection.185}%
+\contentsline {subsection}{\numberline {7.1.2}Integration Testing}{24}{subsection.186}%
+\contentsline {section}{\numberline {7.2}Test Results}{24}{section.187}%
+\contentsline {section}{\numberline {7.3}Platform Compatibility Testing}{25}{section.189}%
+\contentsline {section}{\numberline {7.4}Performance Testing}{25}{section.191}%
+\contentsline {chapter}{\numberline {8}Installation and Usage Guide}{26}{chapter.192}%
+\contentsline {section}{\numberline {8.1}Installation}{26}{section.193}%
+\contentsline {subsection}{\numberline {8.1.1}Prerequisites}{26}{subsection.194}%
+\contentsline {subsection}{\numberline {8.1.2}Quick Start}{26}{subsection.195}%
+\contentsline {section}{\numberline {8.2}Basic Usage}{27}{section.221}%
+\contentsline {subsection}{\numberline {8.2.1}Listing Available Tools}{27}{subsection.222}%
+\contentsline {subsection}{\numberline {8.2.2}Installing a Tool}{27}{subsection.225}%
+\contentsline {subsection}{\numberline {8.2.3}Installing All Tools}{27}{subsection.235}%
+\contentsline {subsection}{\numberline {8.2.4}Checking for Updates}{27}{subsection.238}%
+\contentsline {subsection}{\numberline {8.2.5}Updating Tools}{27}{subsection.245}%
+\contentsline {subsection}{\numberline {8.2.6}Checking Dependencies}{28}{subsection.252}%
+\contentsline {subsection}{\numberline {8.2.7}Verifying Installation}{28}{subsection.259}%
+\contentsline {subsection}{\numberline {8.2.8}Viewing Logs}{28}{subsection.262}%
+\contentsline {section}{\numberline {8.3}GUI Usage}{28}{section.269}%
+\contentsline {section}{\numberline {8.4}Configuration}{28}{section.274}%
+\contentsline {subsection}{\numberline {8.4.1}Viewing Configuration}{28}{subsection.275}%
+\contentsline {subsection}{\numberline {8.4.2}Setting Configuration Values}{29}{subsection.278}%
+\contentsline {section}{\numberline {8.5}Troubleshooting}{29}{section.285}%
+\contentsline {subsection}{\numberline {8.5.1}Common Issues}{29}{subsection.286}%
+\contentsline {chapter}{\numberline {9}Scopes for Improvement}{30}{chapter.287}%
+\contentsline {section}{\numberline {9.1}Project Summary}{30}{section.288}%
+\contentsline {subsection}{\numberline {9.1.1}Achievements}{30}{subsection.289}%
+\contentsline {subsection}{\numberline {9.1.2}Learnings}{30}{subsection.290}%
+\contentsline {section}{\numberline {9.2}Scopes for Improvement}{30}{section.291}%
+\contentsline {subsection}{\numberline {9.2.1}Docker Support for Improved Isolation}{31}{subsection.292}%
+\contentsline {subsection}{\numberline {9.2.2}Extensible Plugin Architecture}{31}{subsection.293}%
+\contentsline {subsection}{\numberline {9.2.3}Proactive Auto-Repair Capabilities}{31}{subsection.294}%
+\contentsline {subsection}{\numberline {9.2.4}Remote Web Interface and Analytics}{31}{subsection.295}%
+\contentsline {chapter}{\numberline {10}Conclusion}{32}{chapter.296}%
+\contentsline {chapter}{\numberline {11}References}{33}{chapter.297}%
