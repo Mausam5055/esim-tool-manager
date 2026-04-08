@@ -1,13 +1,23 @@
+<div align="center">
+
 # eSim Automated Tool Manager
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Tests](https://img.shields.io/badge/Tests-10%2F10%20Passed-brightgreen.svg)](tests/)
-[![Typer](https://img.shields.io/badge/CLI-Typer-blue.svg)](https://typer.tiangolo.com/)
-[![Rich](https://img.shields.io/badge/Display-Rich-yellow.svg)](https://rich.readthedocs.io/)
-[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/Mausam5055/esim-tool-manager)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Tests](https://img.shields.io/badge/Tests-10%2F10%20Passing-22C55E?style=for-the-badge&logo=pytest&logoColor=white)](tests/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](Dockerfile)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-6366F1?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/Mausam5055/esim-tool-manager)
+[![CLI](https://img.shields.io/badge/CLI-Typer%20%2B%20Rich-F59E0B?style=for-the-badge&logo=gnubash&logoColor=white)](https://typer.tiangolo.com/)
+[![GUI](https://img.shields.io/badge/GUI-CustomTkinter-EC4899?style=for-the-badge&logo=python&logoColor=white)](https://github.com/TomSchimansky/CustomTkinter)
+[![Code Style](https://img.shields.io/badge/Code%20Style-PEP8-4B5563?style=for-the-badge&logo=python&logoColor=white)](https://peps.python.org/pep-0008/)
+
+> An automated tool manager for [eSim](https://esim.fossee.in/) EDA platform — automates installation, configuration, updates, and dependency management of external EDA tools across Linux, Windows, and macOS.
+
+</div>
 
 <div align="center">
+
+### 📸 Interface Previews
 
 | GUI Application Dashboard | CLI Tools Listing |
 |:---:|:---:|
@@ -17,7 +27,6 @@
 
 </div>
 
-An automated tool manager for [eSim](https://esim.fossee.in/) EDA platform. This tool automates the installation, configuration, update, and management of external tools and dependencies.
 
 ## 🚀 Features & Requirements Fulfillment
 
