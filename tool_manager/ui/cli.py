@@ -10,6 +10,7 @@ from .. import installer
 from .. import updater
 from .. import dependency_checker
 from .. import env_manager
+from .. import docker_generator
 from . import display
 
 app = typer.Typer(help="eSim Automated Tool Manager")
@@ -207,6 +208,17 @@ def config_show():
     """Shows current configuration."""
     current_config = config.load_config()
     console.print_json(data=current_config)
+
+@app.command()
+def generate_docker():
+    """Generates a Dockerfile based on the tool registry."""
+    registry = load_registry()
+    path = "Dockerfile"
+    display.print_info(f"Generating {path}...")
+    if docker_generator.generate_dockerfile(registry, path):
+        display.print_success(f"Successfully generated {path} in current directory.")
+    else:
+        display.print_error(f"Failed to generate {path}.")
 
 @app.command()
 def config_set(key: str, value: str):
