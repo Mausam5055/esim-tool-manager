@@ -244,7 +244,7 @@ The tool automatically configures environment variables for installed tools:
 > 
 > This is configured to elegantly demonstrate the tool manager's automated background download, extraction, and registry management capabilities. However, because this archive contains raw C source code rather than a compiled binary `.exe`, the `ngspice --version` command will naturally not be recognized by your Windows terminal after installation. For production use or full execution tests, simply replace the registry fallback URL with a direct link to a compiled Windows binary package!
 
-## 🌟 Creativity Highlight: Infrastructure as Code (IaC) & Docker Generation
+## 🌟 Infrastructure as Code (IaC) & Docker Generation
 
 While automating package managers handles day-to-day use, a far more insidious issue plagues modern Electronic Design Automation (EDA) workflows: **"Dependency Hell"**.
 
