@@ -7,6 +7,16 @@
 [![Rich](https://img.shields.io/badge/Display-Rich-yellow.svg)](https://rich.readthedocs.io/)
 [![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/Eyantra698Sumanto/esim-tool-manager)
 
+<div align="center">
+
+| GUI Application Dashboard | CLI Tools Listing |
+|:---:|:---:|
+| <img src="docs/figures/GUI.png" width="400" alt="GUI"> | <img src="docs/figures/ListCLI.png" width="400" alt="CLI List"> |
+| **CLI Dependency Verification** | **CLI Tool Help Menu** |
+| <img src="docs/figures/CheckDepsCLI.png" width="400" alt="CLI Deps"> | <img src="docs/figures/OptionsAndCommandsCLI.png" width="400" alt="CLI Help"> |
+
+</div>
+
 An automated tool manager for [eSim](https://esim.fossee.in/) EDA platform. This tool automates the installation, configuration, update, and management of external tools and dependencies.
 
 ## 🚀 Features & Requirements Fulfillment
@@ -22,14 +32,6 @@ This project successfully implements **all 5 requirements** and the **optional f
 | **User Interface** | CLI/GUI interface, view installed tools/updates, log actions | ✅ Dual Interface: `cli.py` (Typer/Rich) & `gui.py` (CustomTkinter Modern GUI), with `logger.py` |
 | **Cross-platform Support** | (Optional) Support Linux, Windows, Mac | ✅ Supports all 3 platforms dynamically |
 | **Package Manager Integration**| (Optional) Integrate with apt, Homebrew, Chocolatey | ✅ Implemented in `package_bridge.py` with direct URL fallbacks |
-
-## 📸 Interface Previews
-
-| GUI Application Dashboard | CLI Tools Listing |
-|:---:|:---:|
-| <img src="docs/figures/GUI.png" width="400" alt="GUI"> | <img src="docs/figures/ListCLI.png" width="400" alt="CLI List"> |
-| **CLI Dependency Verification** | **CLI Tool Help Menu** |
-| <img src="docs/figures/CheckDepsCLI.png" width="400" alt="CLI Deps"> | <img src="docs/figures/OptionsAndCommandsCLI.png" width="400" alt="CLI Help"> |
 
 ## 🛠️ Installation
 
