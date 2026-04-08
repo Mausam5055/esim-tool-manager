@@ -179,10 +179,11 @@ def list():
 def verify(tool_name: str = typer.Argument(..., help="Name of the tool to verify")):
     """Verifies tool installation."""
     registry = load_registry()
-    if installer.verify_installation(tool_name, registry):
-        display.print_success(f"{tool_name} verification successful.")
+    success, details = installer.verify_installation(tool_name, registry)
+    if success:
+        display.print_success(f"{tool_name} verification successful.\nOutput:\n{details}")
     else:
-        display.print_error(f"{tool_name} verification failed.")
+        display.print_error(f"{tool_name} verification failed.\nOutput:\n{details}")
 
 @app.command()
 def check_deps(tool_name: Optional[str] = typer.Argument(None, help="Name of the tool to check dependencies for (leave empty for all)")):

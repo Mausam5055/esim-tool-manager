@@ -37,10 +37,9 @@ class ESimToolManagerGUI(ctk.CTk):
         self.refresh_tools_list()
 
     def setup_ui(self):
-        # --- Sidebar Frame (Left) ---
         self.sidebar_frame = ctk.CTkFrame(self, width=200, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, sticky="nsew")
-        self.sidebar_frame.grid_rowconfigure(6, weight=1)
+        self.sidebar_frame.grid_rowconfigure(7, weight=1)
         
         self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="eSim Tools", font=ctk.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
@@ -57,16 +56,19 @@ class ESimToolManagerGUI(ctk.CTk):
         self.btn_check_deps = ctk.CTkButton(self.sidebar_frame, text="Check Deps", command=self.check_deps_selected, state="disabled")
         self.btn_check_deps.grid(row=4, column=0, padx=20, pady=10)
         
+        self.btn_verify = ctk.CTkButton(self.sidebar_frame, text="Verify", command=self.verify_selected, state="disabled")
+        self.btn_verify.grid(row=5, column=0, padx=20, pady=10)
+        
         self.btn_refresh = ctk.CTkButton(self.sidebar_frame, text="Refresh List", command=self.refresh_tools_list, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"))
-        self.btn_refresh.grid(row=5, column=0, padx=20, pady=10)
+        self.btn_refresh.grid(row=6, column=0, padx=20, pady=10)
 
         self.btn_cancel = ctk.CTkButton(self.sidebar_frame, text="Cancel", command=self.cancel_operation, fg_color="#F44336", hover_color="#D32F2F", state="disabled")
-        self.btn_cancel.grid(row=6, column=0, padx=20, pady=10)
+        self.btn_cancel.grid(row=7, column=0, padx=20, pady=10)
         
         self.appearance_mode_label = ctk.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
-        self.appearance_mode_label.grid(row=7, column=0, padx=20, pady=(10, 0))
+        self.appearance_mode_label.grid(row=8, column=0, padx=20, pady=(10, 0))
         self.appearance_mode_optionemenu = ctk.CTkOptionMenu(self.sidebar_frame, values=["Light", "Dark", "System"], command=self.change_appearance_mode_event)
-        self.appearance_mode_optionemenu.grid(row=8, column=0, padx=20, pady=(10, 20))
+        self.appearance_mode_optionemenu.grid(row=9, column=0, padx=20, pady=(10, 20))
         self.appearance_mode_optionemenu.set("System")
 
         # --- Main Content Frame (Right) ---
@@ -223,6 +225,7 @@ class ESimToolManagerGUI(ctk.CTk):
             self.btn_update.configure(state="disabled")
             self.btn_uninstall.configure(state="disabled")
             self.btn_check_deps.configure(state="disabled")
+            self.btn_verify.configure(state="disabled")
             return
             
         tool_id = selected[0]
@@ -235,14 +238,17 @@ class ESimToolManagerGUI(ctk.CTk):
             self.btn_install.configure(state="normal")
             self.btn_update.configure(state="disabled")
             self.btn_uninstall.configure(state="disabled")
+            self.btn_verify.configure(state="disabled")
         elif status == "Update Available":
             self.btn_install.configure(state="disabled")
             self.btn_update.configure(state="normal")
             self.btn_uninstall.configure(state="normal")
+            self.btn_verify.configure(state="normal")
         else: # Installed
             self.btn_install.configure(state="disabled")
             self.btn_update.configure(state="disabled")
             self.btn_uninstall.configure(state="normal")
+            self.btn_verify.configure(state="normal")
 
     def cancel_operation(self):
         if self.cancel_event:
@@ -367,6 +373,24 @@ class ESimToolManagerGUI(ctk.CTk):
                 elif status == "incompatible":
                     self.log(f"  {dep_name} (Installed: {inst_ver} < Required: {req_ver})", "warning")
                     
+        self.run_in_thread(task)
+
+    def verify_selected(self):
+        selected = self.tree.selection()
+        if not selected: return
+        tool_name = selected[0]
+        
+        self.log(f"\nVerifying installation for {tool_name}...")
+        
+        def task():
+            success, details = installer.verify_installation(tool_name, self.registry)
+            if details:
+                self.log(f"Output:\n{details}")
+            if success:
+                self.log(f"{tool_name} verification successful.", "success")
+            else:
+                self.log(f"{tool_name} verification failed.", "error")
+                
         self.run_in_thread(task)
 
 def main():

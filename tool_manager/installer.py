@@ -80,10 +80,11 @@ def install_tool(tool_name: str, registry: dict, version: str = None, force: boo
             return False
             
     if success:
-        if verify_installation(tool_name, registry):
+        ver_success, ver_details = verify_installation(tool_name, registry)
+        if ver_success:
             logger.info(f"Verification passed for {tool_name}")
         else:
-            logger.warning(f"Installation of {tool_name} completed but verification failed (may require terminal restart).")
+            logger.warning(f"Installation of {tool_name} completed but verification failed (may require terminal restart).\nDetails: {ver_details}")
             
         apply_tool_env(tool_name, registry)
         # Record in config
@@ -213,23 +214,26 @@ def _add_to_windows_path(tool_dir: Path):
     except Exception as e:
         logger.warning(f"Could not add to PATH: {e}")
 
-def verify_installation(tool_name: str, registry: dict) -> bool:
-    """Runs tool's verify_command."""
+def verify_installation(tool_name: str, registry: dict) -> tuple[bool, str]:
+    """Runs tool's verify_command and returns detailed output."""
     tool_entry = next((t for t in registry["tools"] if t["name"] == tool_name), None)
     if not tool_entry:
-        return False
+        return False, "Tool not found in registry."
         
     verify_cmd = tool_entry.get("verify_command")
     if not verify_cmd:
-        return True # Assume OK if no verify command
+        return True, "No verify command specified for tool."
         
     try:
         # Use shell=True for verify commands which might include flags
         result = subprocess.run(verify_cmd, shell=True, capture_output=True, text=True)
-        return result.returncode == 0
+        output = (result.stdout + "\n" + result.stderr).strip()
+        if not output:
+            output = f"Process exited with code {result.returncode}"
+        return result.returncode == 0, output
     except Exception as e:
         logger.error(f"Verification failed for {tool_name}: {e}")
-        return False
+        return False, str(e)
 
 def get_installed_version(tool_name: str, registry: dict) -> str | None:
     """Parses stdout for version string using regex."""

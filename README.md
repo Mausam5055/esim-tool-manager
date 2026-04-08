@@ -23,6 +23,14 @@ This project successfully implements **all 5 requirements** and the **optional f
 | **Cross-platform Support** | (Optional) Support Linux, Windows, Mac | ✅ Supports all 3 platforms dynamically |
 | **Package Manager Integration**| (Optional) Integrate with apt, Homebrew, Chocolatey | ✅ Implemented in `package_bridge.py` with direct URL fallbacks |
 
+## 📸 Interface Previews
+
+| GUI Application Dashboard | CLI Tools Listing |
+|:---:|:---:|
+| <img src="docs/figures/GUI.png" width="400" alt="GUI"> | <img src="docs/figures/ListCLI.png" width="400" alt="CLI List"> |
+| **CLI Dependency Verification** | **CLI Tool Help Menu** |
+| <img src="docs/figures/CheckDepsCLI.png" width="400" alt="CLI Deps"> | <img src="docs/figures/OptionsAndCommandsCLI.png" width="400" alt="CLI Help"> |
+
 ## 🛠️ Installation
 
 ### Prerequisites
