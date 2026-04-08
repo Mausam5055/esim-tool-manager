@@ -5,7 +5,7 @@
 [![Tests](https://img.shields.io/badge/Tests-10%2F10%20Passed-brightgreen.svg)](tests/)
 [![Typer](https://img.shields.io/badge/CLI-Typer-blue.svg)](https://typer.tiangolo.com/)
 [![Rich](https://img.shields.io/badge/Display-Rich-yellow.svg)](https://rich.readthedocs.io/)
-[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/Eyantra698Sumanto/esim-tool-manager)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20Windows%20%7C%20macOS-lightgrey.svg)](https://github.com/Mausam5055/esim-tool-manager)
 
 <div align="center">
 
@@ -42,7 +42,7 @@ This project successfully implements **all 5 requirements** and the **optional f
 ### Quick Start
 ```bash
 # Clone the repository
-git clone https://github.com/Eyantra698Sumanto/esim-tool-manager.git
+git clone https://github.com/Mausam5055/esim-tool-manager.git
 cd esim-tool-manager
 
 # Create virtual environment
@@ -252,9 +252,9 @@ The tool automatically configures environment variables for installed tools:
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/Eyantra698Sumanto/esim-tool-manager/issues)
-- **Documentation**: [Wiki](https://github.com/Eyantra698Sumanto/esim-tool-manager/wiki)
-- **Email**: contact-esim@fossee.in
+- **Issues & Support**: For any issues, bug reports, or direct support, please contact **Mausam Kar** via email at [rikikumkar@gmail.com](mailto:rikikumkar@gmail.com)
+- **Issue Tracker**: [GitHub Issues](https://github.com/Mausam5055/esim-tool-manager/issues)
+- **Documentation**: [Wiki](https://github.com/Mausam5055/esim-tool-manager/wiki)
 
 ## 🙏 Acknowledgments
 
@@ -269,7 +269,7 @@ The tool automatically configures environment variables for installed tools:
 
 **Built for eSim Summer Fellowship 2026 — Task 5: Automated Tool Manager**
 
-[![GitHub Stars](https://img.shields.io/github/stars/Eyantra698Sumanto/esim-tool-manager?style=social)](https://github.com/Eyantra698Sumanto/esim-tool-manager)
-[![GitHub Forks](https://img.shields.io/github/forks/Eyantra698Sumanto/esim-tool-manager?style=social)](https://github.com/Eyantra698Sumanto/esim-tool-manager/fork)
+[![GitHub Stars](https://img.shields.io/github/stars/Mausam5055/esim-tool-manager?style=social)](https://github.com/Mausam5055/esim-tool-manager)
+[![GitHub Forks](https://img.shields.io/github/forks/Mausam5055/esim-tool-manager?style=social)](https://github.com/Mausam5055/esim-tool-manager/fork)
 
 </div>
