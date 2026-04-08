@@ -119,5 +119,14 @@
 \contentsline {subsection}{\numberline {9.2.2}Extensible Plugin Architecture}{31}{subsection.293}%
 \contentsline {subsection}{\numberline {9.2.3}Proactive Auto-Repair Capabilities}{31}{subsection.294}%
 \contentsline {subsection}{\numberline {9.2.4}Remote Web Interface and Analytics}{31}{subsection.295}%
-\contentsline {chapter}{\numberline {10}Conclusion}{32}{chapter.296}%
-\contentsline {chapter}{\numberline {11}References}{33}{chapter.297}%
+\contentsline {chapter}{\numberline {10}Docker Containerization}{32}{chapter.296}%
+\contentsline {section}{\numberline {10.1}Overview and Motivation}{32}{section.297}%
+\contentsline {section}{\numberline {10.2}Why Docker for This Project?}{32}{section.298}%
+\contentsline {section}{\numberline {10.3}Dockerfile Architecture}{33}{section.299}%
+\contentsline {section}{\numberline {10.4}Build and Usage}{33}{section.306}%
+\contentsline {subsection}{\numberline {10.4.1}Building the Docker Image}{33}{subsection.307}%
+\contentsline {subsection}{\numberline {10.4.2}Running the Container}{34}{subsection.310}%
+\contentsline {section}{\numberline {10.5}Docker Build Snapshots}{34}{section.317}%
+\contentsline {section}{\numberline {10.6}Advantages Over Native Installation}{35}{section.320}%
+\contentsline {chapter}{\numberline {11}Conclusion}{36}{chapter.322}%
+\contentsline {chapter}{\numberline {12}References}{37}{chapter.323}%

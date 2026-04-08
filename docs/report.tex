@@ -1050,7 +1050,114 @@ Adding dedicated self-healing routines would automatically detect and fix common
 \subsection{Remote Web Interface and Analytics}
 For broader enterprise or educational adoption, deploying a browser-based management dashboard would enable remote installations, updates, and collaborative features. Incorporating optional, anonymous usage telemetry would also provide the data required to monitor community health, track popular tool rankings, and refine future optimization efforts.
 
+
+% ======================================================
+% CHAPTER 10: DOCKER CONTAINERIZATION
+% ======================================================
+\chapter{Docker Containerization}
+\section{Overview and Motivation}
+As the eSim Automated Tool Manager is intended to operate seamlessly across Linux, Windows, and macOS, ensuring a consistent and reproducible runtime environment across these platforms is a non-trivial challenge. Native installations depend heavily on the host system's package manager, library versions, and PATH configurations — all of which vary significantly between machines and operating systems. To solve this problem elegantly, Docker containerization was introduced as an optional but powerful deployment strategy for the project.
+
+Docker allows the entire EDA toolchain — Ngspice, KiCad, OpenModelica, and all their shared system-level dependencies — to be packaged into a single self-contained, isolated image. This eliminates the classic ``it works on my machine'' problem by guaranteeing an identical environment for every user, regardless of their host system configuration.
+
+\section{Why Docker for This Project?}
+The decision to introduce Docker was driven by several concrete engineering requirements:
+
+\begin{itemize}
+    \item \textbf{Dependency Isolation}: EDA tools like OpenModelica require very specific system library versions (e.g., specific builds of \texttt{libwxgtk} or \texttt{libreadline}) that can conflict with libraries already installed on a user's system. Docker namespaces these dependencies completely, preventing any interference with host libraries.
+    \item \textbf{Reproducibility}: Researchers and educators using eSim need to guarantee that their simulation environment always produces identical results. A Docker image achieves this by fixing every dependency version at build time.
+    \item \textbf{Simplified Onboarding}: New users or students can go from zero to a complete EDA environment with a single \texttt{docker build} command rather than navigating through complex, platform-specific installation guides.
+    \item \textbf{Custom Repository Integration}: Not all tools are available in standard Ubuntu repositories. OpenModelica, for example, requires a separately registered GPG-authenticated apt source. The Dockerfile encapsulates this setup entirely, so the user never has to manually configure package sources.
+    \item \textbf{CI/CD Pipeline Readiness}: A Docker-based environment is directly compatible with continuous integration systems (GitHub Actions, GitLab CI, etc.), enabling automated testing and deployment of the tool manager itself.
+\end{itemize}
+
+\section{Dockerfile Architecture}
+The Dockerfile is structured in a layered, logic-first sequence to maximize Docker's build-cache efficiency and minimize unnecessary rebuilds:
+
+\begin{enumerate}
+    \item \textbf{Base Image}: Ubuntu 22.04 LTS was chosen for its long-term support guarantees, wide package availability, and strong stability record for scientific computing applications.
+    \item \textbf{Non-Interactive Mode}: The \texttt{DEBIAN\_FRONTEND=noninteractive} environment variable is set early to suppress timezone and locale prompts that would hang the automated build.
+    \item \textbf{Prerequisite Bootstrap}: Core tools (\texttt{curl}, \texttt{gnupg}, \texttt{ca-certificates}) needed to securely add external repositories are installed in a dedicated, cacheable layer.
+    \item \textbf{OpenModelica Repository}: Since OpenModelica is not present in the standard Ubuntu repositories, its official GPG-authenticated apt source is programmatically registered using the project's own signing key.
+    \item \textbf{EDA Tool Installation}: All three primary tools — Ngspice, KiCad, and OpenModelica — along with all their declared system-level dependencies, are installed in a single consolidated \texttt{RUN} layer. The apt cache is purged at the end of this step to minimize the final image size.
+    \item \textbf{Environment Configuration}: Tool-specific environment variables (\texttt{NGSPICE\_HOME}, \texttt{KICAD\_SYMBOL\_DIR}, \texttt{OPENMODELICAHOME}) and their corresponding \texttt{PATH} entries are set declaratively.
+\end{enumerate}
+
+\section{Build and Usage}
+
+\subsection{Building the Docker Image}
+The image can be built locally using the following single command from the project root directory:
+
+\begin{lstlisting}[language=bash, caption={Building the Docker Image}]
+docker build -t esim-tools .
+\end{lstlisting}
+
+Docker's layer caching ensures that subsequent rebuilds (e.g., after modifying only environment variables) are extremely fast, as unchanged layers are reused directly from cache.
+
+\subsection{Running the Container}
+Once built, the container can be started interactively to access the full EDA toolchain environment:
+
+\begin{lstlisting}[language=bash, caption={Running a Container Instance}]
+# Start an interactive shell with the EDA environment
+docker run -it esim-tools /bin/bash
+
+# Mount current project into the container for simulation work
+docker run -it -v $(pwd):/workspace esim-tools /bin/bash
+\end{lstlisting}
+
+\section{Docker Build Snapshots}
+
+The following screenshots illustrate the Docker build process in action, from pulling the base Ubuntu layer through to the successful installation of all EDA tools.
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+        \vspace{4cm}
+        \centering
+        \textit{[Paste Docker build start screenshot here — showing base image pull and apt-get update phase]}
+        \vspace{4cm}
+    \end{minipage}}
+    \caption{Docker Build — Base Image and Repository Setup Phase}
+    \label{fig:docker_build_start}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.95\textwidth}
+        \vspace{4cm}
+        \centering
+        \textit{[Paste Docker build success screenshot here — showing all packages installed and image finalised]}
+        \vspace{4cm}
+    \end{minipage}}
+    \caption{Docker Build — Successful Completion and Image Size}
+    \label{fig:docker_build_done}
+\end{figure}
+
+\section{Advantages Over Native Installation}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Aspect} & \textbf{Native Installation} & \textbf{Docker Container} \\
+        \hline
+        System Conflicts & Possible library clashes with host & Fully isolated, no conflicts \\
+        \hline
+        Reproducibility & Varies across machines & Identical every time \\
+        \hline
+        Setup Complexity & High (manual repo setup needed) & Single command \\
+        \hline
+        Cleanup & Manual uninstall required & \texttt{docker rmi} removes everything \\
+        \hline
+        CI/CD Integration & Difficult & Native and direct \\
+        \hline
+    \end{tabular}
+    \caption{Native Installation vs Docker Container Deployment}
+    \label{tab:docker_comparison}
+\end{table}
+
 \chapter{Conclusion}
+
 The Automated Tool Manager represents a significant step forward in making eSim more accessible to users across all technical backgrounds. By automating the complexities of tool management, this project allows users to focus on what matters most - designing and simulating electronic circuits.
 
 The modular architecture ensures that the tool manager can grow and adapt to future needs, while the comprehensive documentation provides a solid foundation for continued development.
