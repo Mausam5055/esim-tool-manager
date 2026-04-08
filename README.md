@@ -34,31 +34,31 @@ This project successfully implements **all 5 requirements** and the **optional f
 | **Package Manager Integration**| (Optional) Integrate with apt, Homebrew, Chocolatey | ✅ Implemented in `package_bridge.py` with direct URL fallbacks |
 | **Isolated Environments (Creativity)**| Generating reproducible containerized states | ✅ Implemented `docker_generator.py` converting registry to Docker Infrastructure-as-Code |
 
-## 🌟 Infrastructure as Code (IaC) & Docker Generation
+## 🌟 Easy Docker Setup
 
-While automating package managers handles day-to-day use, a far more insidious issue plagues modern Electronic Design Automation (EDA) workflows: **"Dependency Hell"**.
+A common problem when installing Electronics tools is **"Dependency Hell"**.
 
-### The Problem: Fractured EDA Environments
-When attempting to install an EDA suite containing Ngspice, KiCad, and OpenModelica on a physical host machine, users frequently encounter:
-1. **System Library Conflicts**: The host OS might have an updated `libreadline` or `libxaw7` that entirely breaks older binaries required by a circuit simulator.
-2. **Environment Variable Pollution**: Appending numerous paths to global `PATH`, `NGSPICE_HOME`, and `KICAD_SYMBOL_DIR` variable registries often causes silent failures across other software outside of the EDA ecosystem.
-3. **The "It Works on My Machine" Syndrome**: An automated script might succeed flawlessly on an Arch Linux distribution but fail completely on a Windows 11 machine due to entirely different linking standards.
+### The Problem
+When users try to install tools like Ngspice, KiCad, and OpenModelica, they often face these issues:
+1. **Conflicting Versions**: The system might already have different versions of required background files (like `libreadline`), which breaks the installation.
+2. **Messy Settings**: Adding too many system variables (like `NGSPICE_HOME` or `KICAD_SYMBOL_DIR`) can break other software on your computer.
+3. **"It Works on My Machine"**: An installation script might work perfectly on one operating system (like Linux) but fail entirely on another (like Windows).
 
-### The Solution: Automated Docker Infrastructure
-To tackle this, this project goes beyond a simple script and introduces a dynamic **Docker Environment Generator**. 
+### The Solution
+To fix this, this project includes a **Docker Environment Generator**.
 
-Instead of relying solely on brittle local installs, the tool reads the master definitions inside `data/tools_registry.json` and algorithmically maps the environment variables, Ubuntu/Debian core dependencies, and installation commands into a completely reproducible **Infrastructure as Code (IaC)** layer.
+Instead of just installing tools directly on your computer, the eSim Tool Manager can automatically read the `tools_registry.json` file and create a ready-to-use Docker environment.
 
 By simply running:
 ```bash
 esim-tool generate-docker
 ```
-The Tool Manager yields a perfectly formatted `Dockerfile`. 
+The Tool Manager will create a perfectly formatted `Dockerfile` for you.
 
-#### Core Advantages:
-- **Perfect Isolation (Sandboxing)**: Dependencies run securely inside an isolated Ubuntu layer; nothing touches or pollutes the user's native host machine. 
-- **Universal Reproducibility**: Because the generated instruction set targets the Docker hypervisor, the environment is guaranteed to build entirely predictably on a student laptop, a university lab workstation, or a remote cloud server.
-- **Future-proofing**: If a tool version needs updating, changing the central `json` registry ensures the next generated `Dockerfile` adapts automatically, making onboarding for new developers or hardware migrations effortless.
+#### Why This is Better:
+- **No Mess (Isolation)**: All tools and files run inside a secure Docker container. Your actual computer stays clean and untouched.
+- **Works Everywhere**: Because it uses Docker, the tools will run exactly the same way on any laptop, lab computer, or cloud server, no matter if you use Windows, Mac, or Linux.
+- **Easy to Update**: If a tool needs a new version, you just update the `json` config file, and a fresh Docker setup can be generated instantly.
 
 
 ## 🛠️ Installation
