@@ -12,11 +12,13 @@ def test_resolve_version(sample_tool_registry):
 def test_verify_installation(mock_run, sample_tool_registry):
     # Success case
     mock_run.return_value = MagicMock(returncode=0)
-    assert verify_installation("ngspice", sample_tool_registry) is True
+    success, _ = verify_installation("ngspice", sample_tool_registry)
+    assert success is True
     
     # Failure case
     mock_run.return_value = MagicMock(returncode=1)
-    assert verify_installation("ngspice", sample_tool_registry) is False
+    success, _ = verify_installation("ngspice", sample_tool_registry)
+    assert success is False
 
 @patch("tool_manager.installer.subprocess.run")
 def test_get_installed_version(mock_run, sample_tool_registry):

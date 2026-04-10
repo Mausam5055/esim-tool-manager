@@ -77,7 +77,7 @@ def _check_windows_tool_version(tool_name: str) -> str | None:
             match = re.search(r'(\d+\.\d+(\.\d+)?)', output)
             if match:
                 return match.group(1)
-    except:
+    except Exception:
         pass
     return None
 

@@ -13,6 +13,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from tool_manager.ui.cli import load_registry
 from tool_manager import installer, updater, dependency_checker, config, docker_generator
 
+# Column indices for the tools treeview table
+STATUS_COLUMN_INDEX = 4
+
 # Set customtkinter appearance and theme
 ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -233,7 +236,7 @@ class ESimToolManagerGUI(ctk.CTk):
             
         tool_id = selected[0]
         item = self.tree.item(tool_id)
-        status = item['values'][4]
+        status = item['values'][STATUS_COLUMN_INDEX]
         
         self.btn_check_deps.configure(state="normal")
         
