@@ -18,7 +18,7 @@ setup(
         ],
     },
     python_requires=">=3.10",
-    author="Sumanto Kar",
+    author="Mausam Kar",
     description="Automated Tool Manager for eSim EDA Platform",
     long_description=open("README.md", encoding="utf-8").read() if open("README.md", encoding="utf-8") else "",
     long_description_content_type="text/markdown",

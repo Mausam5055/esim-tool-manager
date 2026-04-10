@@ -2,7 +2,7 @@ Metadata-Version: 2.4
 Name: esim-tool-manager
 Version: 1.0.0
 Summary: Automated Tool Manager for eSim EDA Platform
-Author: Sumanto Kar
+Author: Mausam Kar
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 Requires-Dist: typer[all]>=0.9.0
