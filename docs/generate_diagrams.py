@@ -34,32 +34,37 @@ def arrow(ax, p1, p2, color="#334155", lw=1.6, style="-|>", ls="-"):
 
 
 def generate_architecture(path: Path):
-    fig, ax = plt.subplots(figsize=(14, 8), dpi=200)
+    fig, ax = plt.subplots(figsize=(14, 9), dpi=200)
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 8)
+    ax.set_ylim(0, 9)
     ax.axis("off")
 
-    box(ax, 5.0, 6.6, 4.0, 0.9, "User Interface (CLI / GUI)", fc="#E2E8F0")
-    box(ax, 4.7, 4.9, 4.6, 1.0, "Core Management Engine", fc="#DBEAFE", ec="#1D4ED8")
-    box(ax, 1.0, 4.9, 3.2, 1.0, "Dependency Checker", fc="#DCFCE7", ec="#15803D")
-    box(ax, 9.8, 4.9, 3.2, 1.0, "Environment Manager", fc="#DCFCE7", ec="#15803D")
-    box(ax, 4.8, 3.2, 4.4, 1.0, "Package Bridge (apt / brew / choco)", fc="#F5F3FF", ec="#6D28D9")
-    box(ax, 0.8, 1.1, 3.6, 1.0, "Action Logs", fc="#FEF2F2", ec="#B91C1C")
-    box(ax, 5.1, 1.1, 3.8, 1.0, "Tools Registry", fc="#EFF6FF", ec="#1D4ED8")
-    box(ax, 9.6, 1.1, 3.6, 1.0, "User Config", fc="#F8FAFC", ec="#334155")
+    box(ax, 5.0, 7.6, 4.0, 0.9, "User Interface (CLI / GUI)", fc="#E2E8F0")
+    box(ax, 4.7, 5.9, 4.6, 1.0, "Core Management Engine", fc="#DBEAFE", ec="#1D4ED8")
+    box(ax, 1.0, 5.9, 3.2, 1.0, "Dependency Checker", fc="#DCFCE7", ec="#15803D")
+    box(ax, 9.8, 5.9, 3.2, 1.0, "Environment Manager", fc="#DCFCE7", ec="#15803D")
+    box(ax, 4.8, 4.2, 4.4, 1.0, "Package Bridge (apt / brew / choco)", fc="#F5F3FF", ec="#6D28D9")
+    box(ax, 0.8, 2.1, 3.6, 1.0, "Action Logs", fc="#FEF2F2", ec="#B91C1C")
+    box(ax, 5.1, 2.1, 3.8, 1.0, "Tools Registry", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 9.6, 2.1, 3.6, 1.0, "User Config", fc="#F8FAFC", ec="#334155")
+    # Docker Generator box
+    box(ax, 10.0, 4.2, 3.0, 1.0, "Docker Generator\n(Dockerfile IaC)", fc="#E0F2FE", ec="#0284C7")
 
-    arrow(ax, (7.0, 6.6), (7.0, 5.9))
-    arrow(ax, (7.0, 5.9), (7.0, 6.6))
-    arrow(ax, (4.7, 5.4), (4.2, 5.4))
-    arrow(ax, (4.2, 5.4), (4.7, 5.4))
-    arrow(ax, (9.3, 5.4), (9.8, 5.4))
-    arrow(ax, (9.8, 5.4), (9.3, 5.4))
-    arrow(ax, (7.0, 4.9), (7.0, 4.2))
-    arrow(ax, (7.0, 4.2), (7.0, 4.9))
-    arrow(ax, (2.6, 4.9), (2.6, 2.1))
-    arrow(ax, (11.4, 4.9), (11.4, 2.1))
-    arrow(ax, (7.0, 3.2), (7.0, 2.1))
-    arrow(ax, (7.0, 2.1), (7.0, 3.2))
+    arrow(ax, (7.0, 7.6), (7.0, 6.9))
+    arrow(ax, (7.0, 6.9), (7.0, 7.6))
+    arrow(ax, (4.7, 6.4), (4.2, 6.4))
+    arrow(ax, (4.2, 6.4), (4.7, 6.4))
+    arrow(ax, (9.3, 6.4), (9.8, 6.4))
+    arrow(ax, (9.8, 6.4), (9.3, 6.4))
+    arrow(ax, (7.0, 5.9), (7.0, 5.2))
+    arrow(ax, (7.0, 5.2), (7.0, 5.9))
+    arrow(ax, (2.6, 5.9), (2.6, 3.1))
+    arrow(ax, (11.4, 5.9), (11.4, 3.1))
+    arrow(ax, (7.0, 4.2), (7.0, 3.1))
+    arrow(ax, (7.0, 3.1), (7.0, 4.2))
+    # Docker Generator arrows: reads from Tools Registry, connects to Core Engine
+    arrow(ax, (9.3, 6.4), (10.0, 5.2), color="#0284C7", lw=1.4)
+    arrow(ax, (11.5, 4.2), (8.9, 3.1), color="#0284C7", lw=1.4)
 
     fig.savefig(path, bbox_inches="tight", facecolor="white")
     plt.close(fig)
@@ -166,59 +171,66 @@ def generate_stack_rationale(path: Path):
 
 
 def generate_use_case(path: Path):
-    fig, ax = plt.subplots(figsize=(14, 8), dpi=200)
+    fig, ax = plt.subplots(figsize=(14, 9), dpi=200)
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 8)
+    ax.set_ylim(0, 9)
     ax.axis("off")
 
-    box(ax, 0.9, 3.4, 2.0, 1.1, "User", fc="#F8FAFC", ec="#334155", fs=13)
-    box(ax, 4.2, 5.9, 3.4, 0.9, "Install Tool", fc="#EFF6FF", ec="#1D4ED8")
-    box(ax, 4.2, 4.5, 3.4, 0.9, "Update Tool", fc="#EFF6FF", ec="#1D4ED8")
-    box(ax, 4.2, 3.1, 3.4, 0.9, "List Tools", fc="#EFF6FF", ec="#1D4ED8")
-    box(ax, 4.2, 1.7, 3.4, 0.9, "View Logs", fc="#EFF6FF", ec="#1D4ED8")
-    box(ax, 8.6, 5.2, 4.0, 0.9, "Check Dependencies", fc="#F5F3FF", ec="#6D28D9")
-    box(ax, 8.6, 3.8, 4.0, 0.9, "Verify Installation", fc="#F5F3FF", ec="#6D28D9")
+    box(ax, 0.9, 4.0, 2.0, 1.1, "User", fc="#F8FAFC", ec="#334155", fs=13)
+    box(ax, 4.2, 7.0, 3.4, 0.9, "Install Tool", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 4.2, 5.6, 3.4, 0.9, "Update Tool", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 4.2, 4.2, 3.4, 0.9, "List Tools", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 4.2, 2.8, 3.4, 0.9, "View Logs", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 4.2, 1.4, 3.4, 0.9, "Generate Dockerfile", fc="#E0F2FE", ec="#0284C7")
+    box(ax, 8.6, 6.3, 4.0, 0.9, "Check Dependencies", fc="#F5F3FF", ec="#6D28D9")
+    box(ax, 8.6, 4.9, 4.0, 0.9, "Verify Installation", fc="#F5F3FF", ec="#6D28D9")
 
-    arrow(ax, (2.9, 3.95), (4.2, 6.35))
-    arrow(ax, (2.9, 3.95), (4.2, 4.95))
-    arrow(ax, (2.9, 3.95), (4.2, 3.55))
-    arrow(ax, (2.9, 3.95), (4.2, 2.15))
-    arrow(ax, (2.9, 3.95), (8.6, 5.65))
-    arrow(ax, (2.9, 3.95), (8.6, 4.25))
-    arrow(ax, (7.6, 6.35), (8.6, 5.65), color="#475569")
-    arrow(ax, (7.6, 4.95), (8.6, 4.25), color="#475569")
+    arrow(ax, (2.9, 4.55), (4.2, 7.45))
+    arrow(ax, (2.9, 4.55), (4.2, 6.05))
+    arrow(ax, (2.9, 4.55), (4.2, 4.65))
+    arrow(ax, (2.9, 4.55), (4.2, 3.25))
+    arrow(ax, (2.9, 4.55), (4.2, 1.85))
+    arrow(ax, (2.9, 4.55), (8.6, 6.75))
+    arrow(ax, (2.9, 4.55), (8.6, 5.35))
+    arrow(ax, (7.6, 7.45), (8.6, 6.75), color="#475569")
+    arrow(ax, (7.6, 6.05), (8.6, 5.35), color="#475569")
 
     fig.savefig(path, bbox_inches="tight", facecolor="white")
     plt.close(fig)
 
 
 def generate_cli_hierarchy(path: Path):
-    fig, ax = plt.subplots(figsize=(14, 8), dpi=220)
+    fig, ax = plt.subplots(figsize=(14, 9), dpi=220)
     ax.set_xlim(0, 14)
-    ax.set_ylim(0, 8)
+    ax.set_ylim(0, 9)
     ax.axis("off")
 
-    box(ax, 3.1, 6.8, 7.8, 0.8, "esim-tool <command> [options]", fc="#E2E8F0", ec="#334155", fs=12)
+    box(ax, 3.1, 7.8, 7.8, 0.8, "esim-tool <command> [options]", fc="#E2E8F0", ec="#334155", fs=12)
 
-    box(ax, 1.1, 5.2, 3.0, 0.75, "install", fc="#EFF6FF", ec="#1D4ED8")
-    box(ax, 5.5, 5.2, 3.0, 0.75, "update", fc="#EFF6FF", ec="#1D4ED8")
-    box(ax, 9.9, 5.2, 3.0, 0.75, "list", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 1.1, 6.2, 3.0, 0.75, "install", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 5.5, 6.2, 3.0, 0.75, "update", fc="#EFF6FF", ec="#1D4ED8")
+    box(ax, 9.9, 6.2, 3.0, 0.75, "list", fc="#EFF6FF", ec="#1D4ED8")
 
-    box(ax, 1.1, 3.7, 3.0, 0.75, "check-updates", fc="#F8FAFC")
-    box(ax, 5.5, 3.7, 3.0, 0.75, "verify", fc="#F8FAFC")
-    box(ax, 9.9, 3.7, 3.0, 0.75, "check-deps", fc="#F8FAFC")
+    box(ax, 1.1, 4.7, 3.0, 0.75, "check-updates", fc="#F8FAFC")
+    box(ax, 5.5, 4.7, 3.0, 0.75, "verify", fc="#F8FAFC")
+    box(ax, 9.9, 4.7, 3.0, 0.75, "check-deps", fc="#F8FAFC")
 
-    box(ax, 1.1, 2.2, 3.0, 0.75, "logs", fc="#F8FAFC")
-    box(ax, 5.5, 2.2, 3.0, 0.75, "uninstall", fc="#F8FAFC")
-    box(ax, 9.9, 2.2, 3.0, 0.75, "config-show", fc="#F8FAFC")
+    box(ax, 1.1, 3.2, 3.0, 0.75, "logs", fc="#F8FAFC")
+    box(ax, 5.5, 3.2, 3.0, 0.75, "uninstall", fc="#F8FAFC")
+    box(ax, 9.9, 3.2, 3.0, 0.75, "config-show", fc="#F8FAFC")
 
-    roots = [(4.2, 6.8), (7.0, 6.8), (9.8, 6.8)]
-    targets = [(2.6, 5.95), (7.0, 5.95), (11.4, 5.95),
-               (2.6, 4.45), (7.0, 4.45), (11.4, 4.45),
-               (2.6, 2.95), (7.0, 2.95), (11.4, 2.95)]
+    # Docker command row
+    box(ax, 5.5, 1.7, 3.0, 0.75, "generate-docker", fc="#E0F2FE", ec="#0284C7")
+
+    roots = [(4.2, 7.8), (7.0, 7.8), (9.8, 7.8)]
+    targets = [(2.6, 6.95), (7.0, 6.95), (11.4, 6.95),
+               (2.6, 5.45), (7.0, 5.45), (11.4, 5.45),
+               (2.6, 3.95), (7.0, 3.95), (11.4, 3.95)]
     for i, target in enumerate(targets):
         root = roots[i % len(roots)]
         arrow(ax, root, target, color="#334155", lw=1.2)
+    # Arrow to generate-docker
+    arrow(ax, (7.0, 7.8), (7.0, 2.45), color="#0284C7", lw=1.2)
 
     fig.savefig(path, bbox_inches="tight", facecolor="white")
     plt.close(fig)

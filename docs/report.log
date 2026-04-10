@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.2.12)  11 APR 2026 03:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.2.12)  11 APR 2026 03:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1097,7 +1097,7 @@ Chapter 2.
 <figures/eda_landscape.png, id=788, 798.5835pt x 459.6372pt>
 File: figures/eda_landscape.png Graphic file (type png)
 <use figures/eda_landscape.png>
-Package pdftex.def Info: figures/eda_landscape.png  used on input line 266.
+Package pdftex.def Info: figures/eda_landscape.png  used on input line 265.
 (pdftex.def)             Requested size: 430.31812pt x 247.6814pt.
 
 
@@ -1109,7 +1109,7 @@ Package pdftex.def Info: figures/eda_landscape.png  used on input line 266.
 <figures/stack_rationale.png, id=799, 798.5835pt x 459.6372pt>
 File: figures/stack_rationale.png Graphic file (type png)
 <use figures/stack_rationale.png>
-Package pdftex.def Info: figures/stack_rationale.png  used on input line 297.
+Package pdftex.def Info: figures/stack_rationale.png  used on input line 296.
 (pdftex.def)             Requested size: 430.31812pt x 247.6814pt.
 
 
@@ -1117,26 +1117,26 @@ Package pdftex.def Info: figures/stack_rationale.png  used on input line 297.
 
 [6 <./figures/stack_rationale.png>]
 Chapter 3.
-<figures/architecture_clean.png, id=809, 798.5835pt x 459.6372pt>
+<figures/architecture_clean.png, id=809, 798.5835pt x 515.2851pt>
 File: figures/architecture_clean.png Graphic file (type png)
 <use figures/architecture_clean.png>
-Package pdftex.def Info: figures/architecture_clean.png  used on input line 322
+Package pdftex.def Info: figures/architecture_clean.png  used on input line 321
 .
-(pdftex.def)             Requested size: 430.31812pt x 247.6814pt.
+(pdftex.def)             Requested size: 430.31812pt x 277.66797pt.
 
 
 [7
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-35.
+34.
  (C:\Users\rikik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 [8{C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc} 
 <./figures/architecture_clean.png>]
-Overfull \hbox (110.6728pt too wide) in paragraph at lines 358--359
+Overfull \hbox (110.6728pt too wide) in paragraph at lines 357--358
 []\T1/lmr/m/n/12 (-20) Key up-date op-er-a-tions in-volve check-ing in-di-vid-u
 al or mul-ti-ple tools through \T1/lmtt/m/n/12 check_tool_update(tool_name,
  []
@@ -1147,12 +1147,12 @@ al or mul-ti-ple tools through \T1/lmtt/m/n/12 check_tool_update(tool_name,
 <figures/workflow_clean.png, id=832, 798.5835pt x 459.6372pt>
 File: figures/workflow_clean.png Graphic file (type png)
 <use figures/workflow_clean.png>
-Package pdftex.def Info: figures/workflow_clean.png  used on input line 378.
+Package pdftex.def Info: figures/workflow_clean.png  used on input line 377.
 (pdftex.def)             Requested size: 430.31812pt x 247.6814pt.
 
 
 [10 <./figures/workflow_clean.png>]
-Overfull \hbox (2.26733pt too wide) in paragraph at lines 391--392
+Overfull \hbox (2.26733pt too wide) in paragraph at lines 390--391
 []\T1/lmr/m/n/12 (-20) Active con-fig-u-ra-tions are se-curely main-tained in  
 \T1/lmtt/m/n/12 /.esim_tool_manager/config.json\T1/lmr/m/n/12 (-20) . 
  []
@@ -1170,11 +1170,11 @@ Chapter 4.
 [13]
 
 [14]
-<figures/use_case_clean.png, id=854, 798.5835pt x 459.6372pt>
+<figures/use_case_clean.png, id=854, 798.5835pt x 515.2851pt>
 File: figures/use_case_clean.png Graphic file (type png)
 <use figures/use_case_clean.png>
-Package pdftex.def Info: figures/use_case_clean.png  used on input line 541.
-(pdftex.def)             Requested size: 430.31812pt x 247.6814pt.
+Package pdftex.def Info: figures/use_case_clean.png  used on input line 540.
+(pdftex.def)             Requested size: 430.31812pt x 277.66797pt.
 
 
 [15 <./figures/use_case_clean.png>]
@@ -1184,7 +1184,7 @@ Chapter 5.
 [16
 
 ]
-Overfull \hbox (98.3084pt too wide) in paragraph at lines 580--582
+Overfull \hbox (98.3084pt too wide) in paragraph at lines 579--581
 []\T1/lmr/m/n/12 (-20) The im-ple-men-ta-tion uses the Strat-egy pat-tern for i
 n-stal-la-tion meth-ods: \T1/lmtt/m/n/12 install_via_package_manager()
  []
@@ -1193,7 +1193,7 @@ n-stal-la-tion meth-ods: \T1/lmtt/m/n/12 install_via_package_manager()
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 586.
+nput line 585.
 
 
 [17]
@@ -1203,7 +1203,7 @@ File: lstlang1.sty 2024/09/23 1.10c listings language file
 (C:\Users\rikik\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-Overfull \hbox (49.35458pt too wide) in paragraph at lines 623--625
+Overfull \hbox (49.35458pt too wide) in paragraph at lines 622--624
 []\T1/lmr/bx/n/12 (-20) Windows\T1/lmr/m/n/12 (-20) : Uses Win-dows Reg-istry t
 o set per-sis-tent en-vi-ron-ment vari-ables at \T1/lmtt/m/n/12 HKCU\Environmen
 t\T1/lmr/m/n/12 (-20) . 
@@ -1215,12 +1215,12 @@ t\T1/lmr/m/n/12 (-20) .
 
 [19]
 Chapter 6.
-<figures/cli_hierarchy_clean.png, id=949, 798.255pt x 459.5715pt>
+<figures/cli_hierarchy_clean.png, id=949, 798.255pt x 515.088pt>
 File: figures/cli_hierarchy_clean.png Graphic file (type png)
 <use figures/cli_hierarchy_clean.png>
-Package pdftex.def Info: figures/cli_hierarchy_clean.png  used on input line 70
-0.
-(pdftex.def)             Requested size: 430.31812pt x 247.73715pt.
+Package pdftex.def Info: figures/cli_hierarchy_clean.png  used on input line 69
+9.
+(pdftex.def)             Requested size: 430.31812pt x 277.66394pt.
 
 
 [20
@@ -1230,12 +1230,12 @@ Package pdftex.def Info: figures/cli_hierarchy_clean.png  used on input line 70
 File: figures/OptionsAndCommandsCLI.png Graphic file (type png)
 <use figures/OptionsAndCommandsCLI.png>
 Package pdftex.def Info: figures/OptionsAndCommandsCLI.png  used on input line 
-708.
+707.
 (pdftex.def)             Requested size: 443.9066pt x 231.01013pt.
 <figures/ListCLI.png, id=955, 1385.92781pt x 754.31813pt>
 File: figures/ListCLI.png Graphic file (type png)
 <use figures/ListCLI.png>
-Package pdftex.def Info: figures/ListCLI.png  used on input line 715.
+Package pdftex.def Info: figures/ListCLI.png  used on input line 714.
 (pdftex.def)             Requested size: 443.9066pt x 241.60542pt.
 
 
@@ -1243,7 +1243,7 @@ Package pdftex.def Info: figures/ListCLI.png  used on input line 715.
 <figures/GUI.png, id=963, 1398.72563pt x 745.28438pt>
 File: figures/GUI.png Graphic file (type png)
 <use figures/GUI.png>
-Package pdftex.def Info: figures/GUI.png  used on input line 726.
+Package pdftex.def Info: figures/GUI.png  used on input line 725.
 (pdftex.def)             Requested size: 443.9066pt x 236.51712pt.
 
 
@@ -1251,7 +1251,7 @@ Package pdftex.def Info: figures/GUI.png  used on input line 726.
 <figures/CheckDepsCLI.png, id=970, 1388.18625pt x 734.745pt>
 File: figures/CheckDepsCLI.png Graphic file (type png)
 <use figures/CheckDepsCLI.png>
-Package pdftex.def Info: figures/CheckDepsCLI.png  used on input line 742.
+Package pdftex.def Info: figures/CheckDepsCLI.png  used on input line 741.
 (pdftex.def)             Requested size: 443.9066pt x 234.95503pt.
 
 
@@ -1262,22 +1262,22 @@ Chapter 7.
 [24
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 823--823
+Underfull \hbox (badness 10000) in paragraph at lines 822--822
 []|\T1/lmr/m/n/12 (+20) Package Man-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 825--825
+Underfull \hbox (badness 10000) in paragraph at lines 824--824
 []|\T1/lmr/m/n/12 (+20) Environment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 827--827
+Underfull \hbox (badness 10000) in paragraph at lines 826--826
 []|\T1/lmr/m/n/12 (+20) URL-based In-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 829--829
+Underfull \hbox (badness 10000) in paragraph at lines 828--828
 []|\T1/lmr/m/n/12 (+20) Dependency
  []
 
@@ -1294,7 +1294,7 @@ Chapter 8.
 [27]
 
 [28]
-Overfull \hbox (204.66672pt too wide) in paragraph at lines 1000--1001
+Overfull \hbox (204.66672pt too wide) in paragraph at lines 999--1000
 []\T1/lmr/m/n/12 (-20) macOS: \T1/lmtt/m/n/12 /bin/bash -c "$(curl -fsSL https:
 //raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
  []
@@ -1322,12 +1322,12 @@ Chapter 10.
 File: figures/DockerFileGenerate.png Graphic file (type png)
 <use figures/DockerFileGenerate.png>
 Package pdftex.def Info: figures/DockerFileGenerate.png  used on input line 111
-4.
+3.
 (pdftex.def)             Requested size: 443.9066pt x 231.4799pt.
 <figures/DockerBuild.png, id=1103, 1861.95625pt x 1005.7575pt>
 File: figures/DockerBuild.png Graphic file (type png)
 <use figures/DockerBuild.png>
-Package pdftex.def Info: figures/DockerBuild.png  used on input line 1121.
+Package pdftex.def Info: figures/DockerBuild.png  used on input line 1120.
 (pdftex.def)             Requested size: 443.9066pt x 239.77533pt.
 
 
@@ -1366,7 +1366,7 @@ b><C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
 ><C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><
 C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><
 C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (47 pages, 1787196 bytes).
+Output written on report.pdf (47 pages, 1828071 bytes).
 PDF statistics:
  1262 PDF objects out of 1440 (max. 8388607)
  384 named destinations out of 1000 (max. 500000)

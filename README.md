@@ -157,6 +157,7 @@ graph TD
     GUI --> DEP
     CLI --> ENV[Environment Manager<br/>PATH & Variables]
     GUI --> ENV
+    CLI --> DCK[Docker Generator<br/>Dockerfile IaC]
     
     INS --> PKG[Package Bridge<br/>apt/brew/choco]
     INS --> CFG[Config Manager<br/>User Settings]
@@ -165,6 +166,7 @@ graph TD
     DEP --> PKG
     UPD --> INS
     ENV --> LOG
+    DCK --> REG
     
     PKG --> REG[(Tools Registry<br/>JSON Database)]
     CFG --> CFGFILE[(Config File<br/>~/.esim_tool_manager/)]
@@ -175,6 +177,7 @@ graph TD
     style UPD fill:#FF9800,stroke:#333,stroke-width:2px,color:#fff
     style DEP fill:#9C27B0,stroke:#333,stroke-width:2px,color:#fff
     style ENV fill:#607D8B,stroke:#333,stroke-width:2px,color:#fff
+    style DCK fill:#0284C7,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ### Module Responsibilities
@@ -190,6 +193,7 @@ graph TD
 | **package_bridge.py** | Package manager integration | `detect_package_manager()`, `run_package_manager_install()` |
 | **config.py** | User configuration management | `load_config()`, `save_config()`, `get()`, `set()` |
 | **logger.py** | Centralized logging | `get_logger()` with file and console output |
+| **docker_generator.py** | Docker environment generation | `generate_dockerfile()` from tools registry |
 
 ### Installation Flow
 ```mermaid
