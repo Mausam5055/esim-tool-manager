@@ -1111,25 +1111,15 @@ The following screenshots illustrate the Docker build process in action, from pu
 
 \begin{figure}[H]
     \centering
-    \fbox{\begin{minipage}{0.95\textwidth}
-        \vspace{4cm}
-        \centering
-        \textit{[Paste Docker build start screenshot here — showing base image pull and apt-get update phase]}
-        \vspace{4cm}
-    \end{minipage}}
-    \caption{Docker Build — Base Image and Repository Setup Phase}
-    \label{fig:docker_build_start}
+    \includegraphics[width=0.98\textwidth]{figures/DockerFileGenerate.png}
+    \caption{Dockerfile Generation — Auto-generated Dockerfile via \texttt{esim-tool generate-docker} Command}
+    \label{fig:docker_file_generate}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \fbox{\begin{minipage}{0.95\textwidth}
-        \vspace{4cm}
-        \centering
-        \textit{[Paste Docker build success screenshot here — showing all packages installed and image finalised]}
-        \vspace{4cm}
-    \end{minipage}}
-    \caption{Docker Build — Successful Completion and Image Size}
+    \includegraphics[width=0.98\textwidth]{figures/DockerBuild.png}
+    \caption{Docker Build — Image Build Process Showing Layer Caching and Package Installation}
     \label{fig:docker_build_done}
 \end{figure}
 
@@ -1181,6 +1171,7 @@ This project demonstrates the power of open-source collaboration in solving real
     \item Homebrew Package Manager. \url{https://brew.sh/}
     \item Debian APT Documentation. \url{https://wiki.debian.org/Apt}
     \item packaging library. \url{https://packaging.pypa.io/}
+    \item Docker Documentation. \url{https://docs.docker.com/}
 \end{enumerate}
 
 \end{document}

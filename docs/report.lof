@@ -18,7 +18,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Docker Build — Base Image and Repository Setup Phase}}{34}{figure.caption.318}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Docker Build — Successful Completion and Image Size}}{35}{figure.caption.319}%
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Dockerfile Generation — Auto-generated Dockerfile via \texttt {esim-tool generate-docker} Command}}{34}{figure.caption.318}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Docker Build — Image Build Process Showing Layer Caching and Package Installation}}{35}{figure.caption.319}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.2.12)  9 APR 2026 01:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2026.2.12)  11 APR 2026 03:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1051,7 +1051,24 @@ ssee.png>]
 
 
 
-[7] (report.lof)
+[7] (report.lof
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+1.
+
+(C:\Users\rikik\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (50.66016pt too wide) in paragraph at lines 21--21
+ [][] [][][]\T1/lmr/m/n/12 (-20) Dockerfile Gen-er-a-tion ^^V Auto-generated Do
+ck-er-file via \T1/lmtt/m/n/12 esim-tool generate-docker 
+ []
+
+)
 \tf@lof=\write6
 \openout6 = `report.lof'.
 
@@ -1077,7 +1094,7 @@ Chapter 1.
 
 [2]
 Chapter 2.
-<figures/eda_landscape.png, id=785, 798.5835pt x 459.6372pt>
+<figures/eda_landscape.png, id=788, 798.5835pt x 459.6372pt>
 File: figures/eda_landscape.png Graphic file (type png)
 <use figures/eda_landscape.png>
 Package pdftex.def Info: figures/eda_landscape.png  used on input line 266.
@@ -1089,7 +1106,7 @@ Package pdftex.def Info: figures/eda_landscape.png  used on input line 266.
 ]
 
 [4 <./figures/eda_landscape.png>]
-<figures/stack_rationale.png, id=796, 798.5835pt x 459.6372pt>
+<figures/stack_rationale.png, id=799, 798.5835pt x 459.6372pt>
 File: figures/stack_rationale.png Graphic file (type png)
 <use figures/stack_rationale.png>
 Package pdftex.def Info: figures/stack_rationale.png  used on input line 297.
@@ -1100,7 +1117,7 @@ Package pdftex.def Info: figures/stack_rationale.png  used on input line 297.
 
 [6 <./figures/stack_rationale.png>]
 Chapter 3.
-<figures/architecture_clean.png, id=806, 798.5835pt x 459.6372pt>
+<figures/architecture_clean.png, id=809, 798.5835pt x 459.6372pt>
 File: figures/architecture_clean.png Graphic file (type png)
 <use figures/architecture_clean.png>
 Package pdftex.def Info: figures/architecture_clean.png  used on input line 322
@@ -1116,17 +1133,6 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
  (C:\Users\rikik\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-35.
-
-(C:\Users\rikik\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
 
 [8{C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc} 
 <./figures/architecture_clean.png>]
@@ -1138,7 +1144,7 @@ al or mul-ti-ple tools through \T1/lmtt/m/n/12 check_tool_update(tool_name,
 
 
 [9]
-<figures/workflow_clean.png, id=830, 798.5835pt x 459.6372pt>
+<figures/workflow_clean.png, id=832, 798.5835pt x 459.6372pt>
 File: figures/workflow_clean.png Graphic file (type png)
 <use figures/workflow_clean.png>
 Package pdftex.def Info: figures/workflow_clean.png  used on input line 378.
@@ -1164,7 +1170,7 @@ Chapter 4.
 [13]
 
 [14]
-<figures/use_case_clean.png, id=852, 798.5835pt x 459.6372pt>
+<figures/use_case_clean.png, id=854, 798.5835pt x 459.6372pt>
 File: figures/use_case_clean.png Graphic file (type png)
 <use figures/use_case_clean.png>
 Package pdftex.def Info: figures/use_case_clean.png  used on input line 541.
@@ -1209,7 +1215,7 @@ t\T1/lmr/m/n/12 (-20) .
 
 [19]
 Chapter 6.
-<figures/cli_hierarchy_clean.png, id=947, 798.255pt x 459.5715pt>
+<figures/cli_hierarchy_clean.png, id=949, 798.255pt x 459.5715pt>
 File: figures/cli_hierarchy_clean.png Graphic file (type png)
 <use figures/cli_hierarchy_clean.png>
 Package pdftex.def Info: figures/cli_hierarchy_clean.png  used on input line 70
@@ -1220,13 +1226,13 @@ Package pdftex.def Info: figures/cli_hierarchy_clean.png  used on input line 70
 [20
 
 ]
-<figures/OptionsAndCommandsCLI.png, id=952, 1437.87187pt x 748.29562pt>
+<figures/OptionsAndCommandsCLI.png, id=954, 1437.87187pt x 748.29562pt>
 File: figures/OptionsAndCommandsCLI.png Graphic file (type png)
 <use figures/OptionsAndCommandsCLI.png>
 Package pdftex.def Info: figures/OptionsAndCommandsCLI.png  used on input line 
 708.
 (pdftex.def)             Requested size: 443.9066pt x 231.01013pt.
-<figures/ListCLI.png, id=953, 1385.92781pt x 754.31813pt>
+<figures/ListCLI.png, id=955, 1385.92781pt x 754.31813pt>
 File: figures/ListCLI.png Graphic file (type png)
 <use figures/ListCLI.png>
 Package pdftex.def Info: figures/ListCLI.png  used on input line 715.
@@ -1234,7 +1240,7 @@ Package pdftex.def Info: figures/ListCLI.png  used on input line 715.
 
 
 [21 <./figures/cli_hierarchy_clean.png> <./figures/OptionsAndCommandsCLI.png>]
-<figures/GUI.png, id=961, 1398.72563pt x 745.28438pt>
+<figures/GUI.png, id=963, 1398.72563pt x 745.28438pt>
 File: figures/GUI.png Graphic file (type png)
 <use figures/GUI.png>
 Package pdftex.def Info: figures/GUI.png  used on input line 726.
@@ -1242,7 +1248,7 @@ Package pdftex.def Info: figures/GUI.png  used on input line 726.
 
 
 [22 <./figures/ListCLI.png> <./figures/GUI.png>]
-<figures/CheckDepsCLI.png, id=968, 1388.18625pt x 734.745pt>
+<figures/CheckDepsCLI.png, id=970, 1388.18625pt x 734.745pt>
 File: figures/CheckDepsCLI.png Graphic file (type png)
 <use figures/CheckDepsCLI.png>
 Package pdftex.def Info: figures/CheckDepsCLI.png  used on input line 742.
@@ -1312,10 +1318,22 @@ Chapter 10.
 ]
 
 [33]
+<figures/DockerFileGenerate.png, id=1102, 1403.2425pt x 731.73375pt>
+File: figures/DockerFileGenerate.png Graphic file (type png)
+<use figures/DockerFileGenerate.png>
+Package pdftex.def Info: figures/DockerFileGenerate.png  used on input line 111
+4.
+(pdftex.def)             Requested size: 443.9066pt x 231.4799pt.
+<figures/DockerBuild.png, id=1103, 1861.95625pt x 1005.7575pt>
+File: figures/DockerBuild.png Graphic file (type png)
+<use figures/DockerBuild.png>
+Package pdftex.def Info: figures/DockerBuild.png  used on input line 1121.
+(pdftex.def)             Requested size: 443.9066pt x 239.77533pt.
 
-[34]
 
-[35]
+[34 <./figures/DockerFileGenerate.png>]
+
+[35 <./figures/DockerBuild.png (PNG copy)>]
 Chapter 11.
 
 
@@ -1336,22 +1354,21 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: ACFC544A41EF1622176042531BCC1C7C;22170.
  ) 
 Here is how much of TeX's memory you used:
- 29083 strings out of 468133
- 536654 string characters out of 5430712
- 1532850 words of memory out of 5000000
- 56709 multiletter control sequences out of 15000+600000
- 681899 words of font info for 149 fonts, out of 8000000 for 9000
+ 29090 strings out of 468133
+ 537018 string characters out of 5430712
+ 1533099 words of memory out of 5000000
+ 56720 multiletter control sequences out of 15000+600000
+ 677379 words of font info for 146 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,91p,1005b,2062s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pf
 b><C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb
 ><C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><
-C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><
 C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><
 C:/Users/rikik/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on report.pdf (47 pages, 1345090 bytes).
+Output written on report.pdf (47 pages, 1787196 bytes).
 PDF statistics:
- 1260 PDF objects out of 1440 (max. 8388607)
- 383 named destinations out of 1000 (max. 500000)
- 32969 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1262 PDF objects out of 1440 (max. 8388607)
+ 384 named destinations out of 1000 (max. 500000)
+ 30931 words of extra memory for PDF output out of 35830 (max. 10000000)
 

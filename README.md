@@ -24,6 +24,8 @@
 | <img src="docs/figures/GUI.png" width="400" alt="GUI"> | <img src="docs/figures/ListCLI.png" width="400" alt="CLI List"> |
 | **CLI Dependency Verification** | **CLI Tool Help Menu** |
 | <img src="docs/figures/CheckDepsCLI.png" width="400" alt="CLI Deps"> | <img src="docs/figures/OptionsAndCommandsCLI.png" width="400" alt="CLI Help"> |
+| **Dockerfile Generation** | **Docker Build Process** |
+| <img src="docs/figures/DockerFileGenerate.png" width="400" alt="Docker File Generate"> | <img src="docs/figures/DockerBuild.png" width="400" alt="Docker Build"> |
 
 </div>
 
