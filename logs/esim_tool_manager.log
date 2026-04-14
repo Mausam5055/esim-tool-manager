@@ -1235,3 +1235,16 @@ Access to the path 'C:\ProgramData\chocolatey\lib-bad' is denied.
 [2026-04-08 23:59:09,675] [INFO] [tool_manager.installer] — Package manager install succeeded
 [2026-04-08 23:59:09,676] [INFO] [tool_manager.installer] — Verification passed for ngspice
 [2026-04-08 23:59:09,677] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice
+[2026-04-11 03:59:19,941] [INFO] [tool_manager.env_manager] — Removed env vars for ngspice from HKCU\Environment
+[2026-04-11 03:59:19,944] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {}
+[2026-04-11 03:59:19,944] [WARNING] [tool_manager.installer] — Uninstall command for ngspice failed or was not available.
+[2026-04-11 03:59:22,712] [INFO] [tool_manager.installer] — Attempting installation from fallback URL: https://github.com/ngspice/ngspice/archive/refs/heads/master.zip
+[2026-04-11 03:59:22,714] [INFO] [tool_manager.installer] — Downloading https://github.com/ngspice/ngspice/archive/refs/heads/master.zip...
+[2026-04-11 03:59:38,463] [INFO] [tool_manager.installer] — Extracting master.zip...
+[2026-04-11 03:59:40,917] [INFO] [tool_manager.installer] — Installation successful for ngspice at C:\Users\rikik\AppData\Local\eSimTools\ngspice
+[2026-04-11 03:59:40,953] [WARNING] [tool_manager.installer] — Installation of ngspice completed but verification failed (may require terminal restart).
+Details: 'ngspice' is not recognized as an internal or external command,
+operable program or batch file.
+[2026-04-11 03:59:40,954] [INFO] [tool_manager.env_manager] — Updated Registry (HKCU\Environment): NGSPICE_HOME=/usr/share/ngspice
+[2026-04-11 03:59:40,956] [DEBUG] [tool_manager.config] — Config updated: installed_tools = {'ngspice': {'version': '41', 'installed_at': 'system', 'install_method': 'chocolatey', 'platform': 'windows'}}
+[2026-04-11 03:59:40,956] [INFO] [tool_manager.installer] — Successfully installed and configured ngspice

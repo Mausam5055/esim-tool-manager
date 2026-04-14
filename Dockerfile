@@ -1,22 +1,10 @@
 # Auto-generated Dockerfile for eSim Tool Manager
-# Generated on: 2026-04-11 03:33:22
+# Generated on: 2026-04-11 04:00:07
 
 FROM ubuntu:22.04
 
 # Set non-interactive to avoid timezone prompts during apt installs
 ENV DEBIAN_FRONTEND=noninteractive
-
-# Install prerequisites for adding repositories
-RUN apt-get update && apt-get install -y \
-    gnupg \
-    ca-certificates \
-    wget \
-    && rm -rf /var/lib/apt/lists/*
-
-# Add OpenModelica repository
-RUN wget -qO- https://build.openmodelica.org/apt/openmodelica.asc | gpg --dearmor -o /usr/share/keyrings/openmodelica-keyring.gpg \
-    && echo "deb [signed-by=/usr/share/keyrings/openmodelica-keyring.gpg] https://build.openmodelica.org/apt jammy stable" \
-    > /etc/apt/sources.list.d/openmodelica.list
 
 # Update system and install necessary packages
 RUN apt-get update && apt-get install -y \
