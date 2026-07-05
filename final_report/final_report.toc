@@ -1,0 +1,40 @@
+\contentsline {chapter}{Declaration}{i}{chapter*.1}%
+\contentsline {chapter}{Acknowledgement}{ii}{chapter*.2}%
+\contentsline {chapter}{Abstract}{iii}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter*.6}%
+\contentsline {section}{\numberline {1.1}Background of eSim and FOSSEE}{2}{section*.7}%
+\contentsline {section}{\numberline {1.2}Initial Exploration and Identifying Bottlenecks}{2}{section*.8}%
+\contentsline {section}{\numberline {1.3}Methodology and Fellowship Timeline}{3}{section*.9}%
+\contentsline {section}{\numberline {1.4}Report Structure}{5}{section*.11}%
+\contentsline {chapter}{\numberline {2}System Architecture Documentation}{7}{chapter*.12}%
+\contentsline {section}{\numberline {2.1}Role of Architectural Diagrams in Open Source}{7}{section*.13}%
+\contentsline {section}{\numberline {2.2}Implementing the Mermaid Diagram}{7}{section*.14}%
+\contentsline {subsection}{\numberline {2.2.1}Mermaid Source Code Implementation}{7}{subsection*.15}%
+\contentsline {subsection}{\numberline {2.2.2}Issues Faced: Mermaid Rendering and Complexity}{9}{subsection*.60}%
+\contentsline {chapter}{\numberline {3}Documentation Overhaul \& Live Metrics}{10}{chapter*.62}%
+\contentsline {section}{\numberline {3.1}README.md Restructuring and Style Enhancements}{10}{section*.63}%
+\contentsline {subsection}{\numberline {3.1.1}Dynamic Status Badges}{10}{subsection*.64}%
+\contentsline {subsection}{\numberline {3.1.2}Directory Structure and Repository Mapping}{11}{subsection*.66}%
+\contentsline {subsection}{\numberline {3.1.3}Tabulated Installation and Feature Reference}{12}{subsection*.68}%
+\contentsline {section}{\numberline {3.2}The Structured CONTRIBUTING.md Guidelines}{13}{section*.70}%
+\contentsline {subsection}{\numberline {3.2.1}Dynamic Contributor Profile Integration}{13}{subsection*.71}%
+\contentsline {subsection}{\numberline {3.2.2}Visualizing Contribution History and Activity}{15}{subsection*.85}%
+\contentsline {section}{\numberline {3.3}Security and Licensing Enhancements}{15}{section*.87}%
+\contentsline {chapter}{\numberline {4}Advanced GUI Enhancements \& Refactoring}{17}{chapter*.89}%
+\contentsline {section}{\numberline {4.1}The State of the Existing Interface}{17}{section*.90}%
+\contentsline {section}{\numberline {4.2}Comprehensive UI Polishing and CSS Refactoring}{17}{section*.91}%
+\contentsline {section}{\numberline {4.3}Responsive Design Fixes}{18}{section*.92}%
+\contentsline {section}{\numberline {4.4}Visual Walkthrough of the Polished Interface}{18}{section*.93}%
+\contentsline {chapter}{\numberline {5}Minor Task: KiCad Frontend Analysis \& Bug Fixes}{21}{chapter*.96}%
+\contentsline {section}{\numberline {5.1}Debugging the PyQt6 Migration Regressions}{21}{section*.97}%
+\contentsline {section}{\numberline {5.2}Path Resolution in kicadToNgspice Converters}{22}{section*.98}%
+\contentsline {section}{\numberline {5.3}Dialog Box Alignment and Layout Polish}{22}{section*.99}%
+\contentsline {chapter}{\numberline {6}Version Control \& Deployment Workflows}{23}{chapter*.100}%
+\contentsline {section}{\numberline {6.1}Commit History and Atomic Operations}{23}{section*.101}%
+\contentsline {section}{\numberline {6.2}Branch Management and Code Review}{23}{section*.102}%
+\contentsline {section}{\numberline {6.3}Continuous Integration Integrity}{24}{section*.103}%
+\contentsline {section}{\numberline {6.4}Deployment Workflows and Future Automations}{24}{section*.104}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{25}{chapter*.105}%
+\contentsline {section}{\numberline {7.1}Conclusion}{25}{section*.106}%
+\contentsline {section}{\numberline {7.2}Future Work}{26}{section*.107}%
+\contentsline {chapter}{Bibliography}{26}{section*.107}%
